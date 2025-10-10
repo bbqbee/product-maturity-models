@@ -4,7 +4,7 @@ This repository contains comprehensive product maturity models and security impl
 
 ## 📁 Repository Structure
 
-### `/microsoft-me5-security/`
+### `/Token Theft/`
 **Microsoft ME5 Token Theft Protection Maturity Model**
 
 A comprehensive guide to implementing token theft protection through Microsoft's licensing tiers:
@@ -33,7 +33,7 @@ The complete interactive guide is available as a web application with:
 
 #### 🚀 Quick Start
 1. Clone this repository
-2. Navigate to `/microsoft-me5-security/`
+2. Navigate to `/Token Theft/`
 3. Run a local web server: `python -m http.server 8080`
 4. Open `http://localhost:8080` in your browser
 
