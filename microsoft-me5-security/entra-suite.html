@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entra Suite Benefits - Microsoft ME5 Security</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft ME5 Security</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Attack Anatomy</a></li>
+                <li><a href="solution.html">ME5 Solution</a></li>
+                <li><a href="remediation.html">Auto Remediation</a></li>
+                <li><a href="entra-suite.html" class="active">Entra Suite</a></li>
+                <li><a href="comparison.html">Comparisons</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>🌐 Microsoft Entra Suite</h1>
+                <p class="page-subtitle">Next-Generation Identity & Network Security</p>
+            </div>
+        </section>
+
+        <section class="entra-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <h2>The Future of Zero Trust Security</h2>
+                    <p>Microsoft Entra Suite represents the evolution of identity-centric security, combining advanced identity protection with cloud-delivered network security. At its core, Universal Continuous Access Evaluation (CAE) and Global Secure Access (GSA) work together to provide real-time, intelligent protection across all your resources.</p>
+                    
+                    <div class="entra-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">< 5 seconds</div>
+                            <div class="stat-label">Real-time access revocation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Application coverage with Universal CAE</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Zero Trust</div>
+                            <div class="stat-label">Network perimeter approach</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="universal-cae">
+            <div class="container">
+                <h2>🔄 Universal Continuous Access Evaluation (Preview)</h2>
+                <div class="cae-explanation">
+                    <div class="cae-intro">
+                        <p><strong>Universal CAE</strong> is a breakthrough platform feature that extends Continuous Access Evaluation benefits to <em>any application</em> accessed through Global Secure Access, without requiring applications to be CAE-aware.</p>
+                        
+                        <div class="cae-comparison">
+                            <div class="traditional-cae">
+                                <h3>❌ Traditional CAE Limitations</h3>
+                                <ul>
+                                    <li>Requires each workload to adopt special libraries</li>
+                                    <li>Limited to first-party Microsoft applications only</li>
+                                    <li>Third-party apps cannot benefit from real-time revocation</li>
+                                    <li>Complex implementation for developers</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="universal-cae-benefits">
+                                <h3>✅ Universal CAE Advantages</h3>
+                                <ul>
+                                    <li>Works with <strong>any application</strong> behind GSA</li>
+                                    <li>No application code changes required</li>
+                                    <li>Immediate protection for legacy applications</li>
+                                    <li>Unified security across all workloads</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-it-works">
+                    <h3>🔧 How Universal CAE Works</h3>
+                    <div class="workflow-diagram">
+                        <div class="workflow-step">
+                            <div class="step-icon">🔑</div>
+                            <h4>1. Token Issued</h4>
+                            <p>GSA receives Entra ID access tokens (60-90 min validity)</p>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🚨</div>
+                            <h4>2. Identity Change</h4>
+                            <p>Entra ID detects security event (user disabled, password reset, etc.)</p>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">⚡</div>
+                            <h4>3. Real-Time Signal</h4>
+                            <p>GSA receives immediate notification from Entra ID</p>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔒</div>
+                            <h4>4. Claims Challenge</h4>
+                            <p>GSA sends reauthentication challenge to user</p>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🛑</div>
+                            <h4>5. Access Blocked</h4>
+                            <p>If authentication fails, network access is immediately blocked</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cae-triggers">
+                    <h3>🎯 Signals That Trigger Universal CAE</h3>
+                    <div class="triggers-grid">
+                        <div class="trigger-card critical">
+                            <div class="trigger-icon">🚫</div>
+                            <h4>Account Changes</h4>
+                            <ul>
+                                <li>User account deleted or disabled</li>
+                                <li>Administrator revokes all refresh tokens</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="trigger-card high">
+                            <div class="trigger-icon">🔐</div>
+                            <h4>Authentication Changes</h4>
+                            <ul>
+                                <li>Password changed or reset</li>
+                                <li>Multifactor authentication enabled</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="trigger-card risk">
+                            <div class="trigger-icon">⚠️</div>
+                            <h4>Risk Detection</h4>
+                            <ul>
+                                <li>High user risk detected by Entra ID Protection</li>
+                                <li>Suspicious activity patterns identified</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gsa-preview">
+            <div class="container">
+                <h2>🌐 Global Secure Access (GSA) Preview Features</h2>
+                <div class="gsa-intro">
+                    <p>Global Secure Access delivers a comprehensive Security Service Edge (SSE) solution built on Zero Trust principles. These preview features showcase the future of cloud-delivered network security.</p>
+                </div>
+
+                <div class="gsa-components">
+                    <div class="gsa-component">
+                        <div class="component-header">
+                            <div class="component-icon">🔒</div>
+                            <h3>Microsoft Entra Private Access</h3>
+                            <div class="preview-badge">Preview</div>
+                        </div>
+                        <div class="component-content">
+                            <p><strong>Zero Trust Network Access (ZTNA)</strong> for internal corporate resources</p>
+                            <h4>Universal CAE Benefits:</h4>
+                            <ul>
+                                <li>Real-time session termination for Remote Desktop access</li>
+                                <li>Immediate revocation of file server access</li>
+                                <li>Protection against data exfiltration by departing employees</li>
+                                <li>Instant response to malicious insider activity</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="gsa-component">
+                        <div class="component-header">
+                            <div class="component-icon">🌍</div>
+                            <h3>Microsoft Entra Internet Access</h3>
+                            <div class="preview-badge">Preview</div>
+                        </div>
+                        <div class="component-content">
+                            <p><strong>Secure Web Gateway (SWG)</strong> for internet and SaaS application access</p>
+                            <h4>Universal CAE Benefits:</h4>
+                            <ul>
+                                <li>Immediate termination of internet access</li>
+                                <li>Real-time blocking of non-Microsoft file sharing services</li>
+                                <li>Instant revocation of collaboration tool access</li>
+                                <li>Protection of company data across all internet services</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="gsa-component">
+                        <div class="component-header">
+                            <div class="component-icon">☁️</div>
+                            <h3>Microsoft Traffic Forwarding</h3>
+                            <div class="preview-badge">Preview</div>
+                        </div>
+                        <div class="component-content">
+                            <p><strong>Optimized routing</strong> for Microsoft 365 services and applications</p>
+                            <h4>Universal CAE Benefits:</h4>
+                            <ul>
+                                <li>Enhanced protection for Microsoft applications lacking native CAE</li>
+                                <li>Unified access control across all Microsoft services</li>
+                                <li>Consistent security posture regardless of application CAE support</li>
+                                <li>Simplified administration and monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="strict-enforcement">
+            <div class="container">
+                <h2>🛡️ Strict Enforcement Mode</h2>
+                <div class="enforcement-content">
+                    <div class="enforcement-explanation">
+                        <h3>Maximum Security Protection</h3>
+                        <p><strong>Strict Enforcement mode</strong> represents the highest security level of Universal CAE, providing immediate access termination when location-based Conditional Access policies are violated.</p>
+                        
+                        <div class="enforcement-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">📍</div>
+                                <h4>IP Address Validation</h4>
+                                <p>Immediately blocks access if the IP address isn't allowed by Conditional Access policy</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">🚫</div>
+                                <h4>Token Replay Protection</h4>
+                                <p>Prevents GSA access token theft and replay from unauthorized IP addresses</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">🏢</div>
+                                <h4>Network Enforcement</h4>
+                                <p>Requires users to connect from authorized IP ranges to access GSA services</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">🔄</div>
+                                <h4>Network Change Detection</h4>
+                                <p>Triggers reauthentication when users move to different networks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enforcement-scenario">
+                        <h3>📋 Real-World Scenario</h3>
+                        <div class="scenario-timeline">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Employee Works from Office</h4>
+                                    <p>User authenticates from corporate IP range and accesses resources via GSA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Network Change Detected</h4>
+                                    <p>User moves to coffee shop or unauthorized location with different IP</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Immediate Enforcement</h4>
+                                    <p>Strict mode instantly blocks access and requires reauthentication</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Policy Evaluation</h4>
+                                    <p>Location-based Conditional Access policies are reevaluated in real-time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-benefits">
+            <div class="container">
+                <h2>💼 Business Benefits of Entra Suite</h2>
+                <div class="benefits-showcase">
+                    <div class="benefit-category">
+                        <h3>🔐 Security Benefits</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-content">
+                                    <h4>Real-Time Protection</h4>
+                                    <p>Immediate access revocation reduces risk window from hours to seconds</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🌐</div>
+                                <div class="benefit-content">
+                                    <h4>Universal Coverage</h4>
+                                    <p>Protects all applications, including legacy systems and third-party services</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎯</div>
+                                <div class="benefit-content">
+                                    <h4>Zero Trust Enforcement</h4>
+                                    <p>Continuous verification regardless of user location or device</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-category">
+                        <h3>💰 Operational Benefits</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔧</div>
+                                <div class="benefit-content">
+                                    <h4>Simplified Management</h4>
+                                    <p>Single platform for identity and network security administration</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📈</div>
+                                <div class="benefit-content">
+                                    <h4>Reduced Complexity</h4>
+                                    <p>Eliminates need for multiple point solutions and vendor relationships</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚀</div>
+                                <div class="benefit-content">
+                                    <h4>Faster Deployment</h4>
+                                    <p>Cloud-native architecture enables rapid implementation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-category">
+                        <h3>👥 User Experience Benefits</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔄</div>
+                                <div class="benefit-content">
+                                    <h4>Seamless Access</h4>
+                                    <p>Transparent security that doesn't impede productivity</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📱</div>
+                                <div class="benefit-content">
+                                    <h4>Device Flexibility</h4>
+                                    <p>Secure access from any device, anywhere</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-content">
+                                    <h4>Optimized Performance</h4>
+                                    <p>Intelligent routing ensures best user experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-roadmap">
+            <div class="container">
+                <h2>🗓️ GSA Preview Roadmap</h2>
+                <div class="roadmap-content">
+                    <div class="roadmap-intro">
+                        <p>Microsoft Entra Suite represents the future of identity-centric security. Here's what's available now and what's coming next:</p>
+                    </div>
+                    
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-phase current">
+                            <div class="phase-header">
+                                <div class="phase-icon">🚀</div>
+                                <h3>Current Preview</h3>
+                                <div class="phase-date">Available Now</div>
+                            </div>
+                            <div class="phase-features">
+                                <ul>
+                                    <li>✅ Universal CAE foundation</li>
+                                    <li>✅ Basic Private Access tunneling</li>
+                                    <li>✅ Internet Access filtering</li>
+                                    <li>✅ Microsoft traffic optimization</li>
+                                    <li>✅ Windows client support</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="roadmap-phase upcoming">
+                            <div class="phase-header">
+                                <div class="phase-icon">📈</div>
+                                <h3>Enhanced Preview</h3>
+                                <div class="phase-date">Q1 2026</div>
+                            </div>
+                            <div class="phase-features">
+                                <ul>
+                                    <li>🔜 Advanced DLP integration</li>
+                                    <li>🔜 Enhanced analytics and reporting</li>
+                                    <li>🔜 Mobile client support (iOS/Android)</li>
+                                    <li>🔜 Advanced threat protection</li>
+                                    <li>🔜 Custom policy templates</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="roadmap-phase future">
+                            <div class="phase-header">
+                                <div class="phase-icon">🌟</div>
+                                <h3>General Availability</h3>
+                                <div class="phase-date">H2 2026</div>
+                            </div>
+                            <div class="phase-features">
+                                <ul>
+                                    <li>🎯 Full production support</li>
+                                    <li>🎯 Enterprise SLA guarantees</li>
+                                    <li>🎯 Global availability</li>
+                                    <li>🎯 Complete API ecosystem</li>
+                                    <li>🎯 Advanced customization options</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="getting-started">
+            <div class="container">
+                <h2>🚀 Getting Started with Entra Suite</h2>
+                <div class="getting-started-content">
+                    <div class="prereq-card">
+                        <h3>📋 Prerequisites</h3>
+                        <ul>
+                            <li>Microsoft Entra ID Premium P1 or P2</li>
+                            <li>Global Administrator or Security Administrator role</li>
+                            <li>Supported Windows devices (version 1903 or later)</li>
+                            <li>Network connectivity requirements met</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>Enable GSA Preview</h4>
+                            <p>Activate Global Secure Access preview features in your Entra admin center</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h4>Configure Traffic Profiles</h4>
+                            <p>Set up Private Access, Internet Access, and Microsoft traffic forwarding</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h4>Deploy GSA Client</h4>
+                            <p>Install and configure the Global Secure Access client on user devices</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <h4>Enable Universal CAE</h4>
+                            <p>Activate Universal CAE and configure Conditional Access policies</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">5</div>
+                            <h4>Test & Monitor</h4>
+                            <p>Validate functionality and monitor access patterns and security events</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">6</div>
+                            <h4>Scale Deployment</h4>
+                            <p>Gradually expand to all users and enable advanced features</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Experience the Future of Security</h2>
+                    <p>Join the preview program and see how Entra Suite transforms your security posture with Universal CAE and Global Secure Access.</p>
+                    <div class="cta-buttons">
+                        <a href="implementation.html" class="cta-button">Start Implementation →</a>
+                        <a href="comparison.html" class="cta-button secondary">Compare Solutions →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

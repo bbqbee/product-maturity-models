@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ME5 Solution - Microsoft Security</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft ME5 Security</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Attack Anatomy</a></li>
+                <li><a href="solution.html" class="active">ME5 Solution</a></li>
+                <li><a href="remediation.html">Auto Remediation</a></li>
+                <li><a href="entra-suite.html">Entra Suite</a></li>
+                <li><a href="comparison.html">Comparisons</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>🛡️ ME5 Solution Architecture</h1>
+                <p class="page-subtitle">Token Theft Prevention and Mitigation</p>
+            </div>
+        </section>
+
+        <section class="solution-overview">
+            <div class="container">
+                <div class="solution-intro">
+                    <h2>How ME5 Stops Token Theft</h2>
+                    <p>Microsoft ME5 combines three powerful security components to create a unified defense against token-based attacks. Let's see how each component addresses specific threats:</p>
+                </div>
+                
+                <div class="components-grid">
+                    <div class="component-card">
+                        <div class="component-icon">🔐</div>
+                        <h3>Conditional Access + Entra ID</h3>
+                        <p>Identity and access management with intelligent risk assessment</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">🖥️</div>
+                        <h3>Defender for Endpoint</h3>
+                        <p>Advanced endpoint protection and threat detection</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">🌐</div>
+                        <h3>Defender for Identity/Cloud Apps</h3>
+                        <p>Cloud and identity threat protection</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-details">
+            <div class="container">
+                <h2>🔐 Conditional Access with Token Protection</h2>
+                
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Token Binding</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> Entra ID issues Primary Refresh Tokens (PRTs) that are cryptographically bound to registered devices.</p>
+                        <p><strong>Protection:</strong> Even if stolen, these tokens cannot be reused on unauthorized devices.</p>
+                        <div class="technical-detail">
+                            <h4>Technical Implementation:</h4>
+                            <ul>
+                                <li>Device certificates used for token binding</li>
+                                <li>Hardware security module (TPM) integration</li>
+                                <li>Per-device cryptographic keys</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Continuous Access Evaluation (CAE)</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> Enforces real-time revocation of access when risk signals change.</p>
+                        <p><strong>Triggers include:</strong> IP address changes, user termination, risk score increases</p>
+                        <div class="cae-flow">
+                            <div class="flow-step">
+                                <div class="step-icon">🚨</div>
+                                <h4>Risk Detected</h4>
+                                <p>System identifies suspicious activity</p>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon">⚡</div>
+                                <h4>Instant Evaluation</h4>
+                                <p>CAE triggers immediate assessment</p>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-icon">🔒</div>
+                                <h4>Access Revoked</h4>
+                                <p>Tokens invalidated in real-time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Session Risk Detection</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> Entra ID Protection evaluates session risk during sign-in and token refresh.</p>
+                        <p><strong>Dynamic policies:</strong> Risk-based access decisions applied automatically</p>
+                        <div class="risk-factors">
+                            <h4>Risk Factors Monitored:</h4>
+                            <div class="risk-grid">
+                                <div class="risk-item">📍 Location anomalies</div>
+                                <div class="risk-item">🕒 Time-based patterns</div>
+                                <div class="risk-item">📱 Device fingerprinting</div>
+                                <div class="risk-item">🌐 Network analysis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="endpoint-protection">
+            <div class="container">
+                <h2>🖥️ Defender for Endpoint (MDE)</h2>
+                
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Web Protection via VPN</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> MDE uses a self-looping VPN to inspect outbound traffic and block malicious domains.</p>
+                        <p><strong>Privacy:</strong> User data is not exposed during inspection</p>
+                        <div class="vpn-diagram">
+                            <div class="diagram-step">
+                                <h4>1. Traffic Interception</h4>
+                                <p>All web traffic routed through MDE VPN</p>
+                            </div>
+                            <div class="diagram-step">
+                                <h4>2. Real-Time Analysis</h4>
+                                <p>URLs checked against threat intelligence</p>
+                            </div>
+                            <div class="diagram-step">
+                                <h4>3. Automatic Blocking</h4>
+                                <p>Malicious sites blocked before user access</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Attack Surface Reduction (ASR)</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> Prevents exploitation by enforcing strict device configurations.</p>
+                        <p><strong>Capabilities:</strong> Blocks suspicious command-line executions and file activities</p>
+                        <div class="asr-rules">
+                            <h4>Key ASR Rules:</h4>
+                            <ul>
+                                <li>Block credential stealing from Windows local security authority</li>
+                                <li>Block process creations originating from PSExec and WMI commands</li>
+                                <li>Block untrusted and unsigned processes from USB</li>
+                                <li>Block executable files from running unless they meet prevalence criteria</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Endpoint Detection & Response (EDR)</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> Detects and disrupts advanced persistent threats, including token replay attempts.</p>
+                        <p><strong>Response:</strong> Automated containment and remediation actions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="identity-cloud-protection">
+            <div class="container">
+                <h2>🌐 Defender for Identity and Cloud Apps</h2>
+                
+                <div class="feature-detailed highlight">
+                    <div class="feature-header">
+                        <h3>AiTM Detection</h3>
+                        <div class="feature-status breakthrough">🎯 99% Precision</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>Breakthrough capability:</strong> Identity Protection now includes Attacker-in-the-Middle (AiTM) detection with 99% precision.</p>
+                        <p><strong>How it works:</strong> Identifies malicious reverse proxies used to steal session tokens</p>
+                        <div class="aitm-detection">
+                            <h4>Detection Signals:</h4>
+                            <div class="signal-grid">
+                                <div class="signal-item">
+                                    <div class="signal-icon">🔍</div>
+                                    <h5>Proxy Fingerprinting</h5>
+                                    <p>Detects reverse proxy infrastructure</p>
+                                </div>
+                                <div class="signal-item">
+                                    <div class="signal-icon">📊</div>
+                                    <h5>Behavioral Analysis</h5>
+                                    <p>Anomalous authentication patterns</p>
+                                </div>
+                                <div class="signal-item">
+                                    <div class="signal-icon">🌐</div>
+                                    <h5>Network Analysis</h5>
+                                    <p>Suspicious network routing</p>
+                                </div>
+                                <div class="signal-item">
+                                    <div class="signal-icon">⏱️</div>
+                                    <h5>Timing Analysis</h5>
+                                    <p>Token usage timing patterns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detailed">
+                    <div class="feature-header">
+                        <h3>Risk-Based Conditional Access</h3>
+                        <div class="feature-status">✅ Available Now</div>
+                    </div>
+                    <div class="feature-content">
+                        <p><strong>How it works:</strong> Signals from Defender for Identity and Cloud Apps feed into Conditional Access.</p>
+                        <p><strong>Result:</strong> Compromised sessions are blocked automatically</p>
+                        <div class="signal-flow">
+                            <div class="signal-source">
+                                <h4>Signal Sources</h4>
+                                <ul>
+                                    <li>Defender for Identity</li>
+                                    <li>Defender for Cloud Apps</li>
+                                    <li>Endpoint data</li>
+                                    <li>Network intelligence</li>
+                                </ul>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="risk-engine">
+                                <h4>Risk Engine</h4>
+                                <p>Real-time risk calculation and policy enforcement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-benefits">
+            <div class="container">
+                <h2>Unified Security Fabric</h2>
+                <p>ME5 consolidates identity, endpoint, and cloud signals into a unified security fabric, enabling proactive and automated mitigation of token-based threats.</p>
+                
+                <div class="fabric-diagram">
+                    <div class="fabric-layer">
+                        <h3>🔐 Identity Layer</h3>
+                        <p>Conditional Access + Entra ID Protection</p>
+                    </div>
+                    <div class="fabric-layer">
+                        <h3>🖥️ Endpoint Layer</h3>
+                        <p>Defender for Endpoint + ASR + EDR</p>
+                    </div>
+                    <div class="fabric-layer">
+                        <h3>🌐 Cloud Layer</h3>
+                        <p>Defender for Cloud Apps + Identity</p>
+                    </div>
+                    <div class="fabric-center">
+                        <h3>🧠 XDR Intelligence</h3>
+                        <p>Unified threat detection and response</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>See Automated Protection in Action</h2>
+                    <p>Watch how Defender XDR automatically detects and remediates token theft attacks in real-time.</p>
+                    <div class="cta-buttons">
+                        <a href="remediation.html" class="cta-button">See Auto Remediation →</a>
+                        <a href="comparison.html" class="cta-button secondary">View Comparisons →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

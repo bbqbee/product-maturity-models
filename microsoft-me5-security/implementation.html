@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Guide - Microsoft ME5 Security</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft ME5 Security</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Attack Anatomy</a></li>
+                <li><a href="solution.html">ME5 Solution</a></li>
+                <li><a href="remediation.html">Auto Remediation</a></li>
+                <li><a href="entra-suite.html">Entra Suite</a></li>
+                <li><a href="comparison.html">Comparisons</a></li>
+                <li><a href="implementation.html" class="active">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>🚀 Implementation Guide</h1>
+                <p class="page-subtitle">Your Path to ME5 Deployment</p>
+            </div>
+        </section>
+
+        <section class="implementation-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <h2>Getting Started with ME5</h2>
+                    <p>This implementation guide provides a step-by-step approach to deploying Microsoft ME5 security solutions in your organization. Follow this proven methodology to ensure successful adoption and maximum security benefits.</p>
+                    
+                    <div class="implementation-phases">
+                        <div class="phase-item">
+                            <div class="phase-icon">📋</div>
+                            <h3>Phase 1: Assessment</h3>
+                            <p>Evaluate current security posture and requirements</p>
+                        </div>
+                        <div class="phase-arrow">→</div>
+                        <div class="phase-item">
+                            <div class="phase-icon">🛠️</div>
+                            <h3>Phase 2: Planning</h3>
+                            <p>Design architecture and deployment strategy</p>
+                        </div>
+                        <div class="phase-arrow">→</div>
+                        <div class="phase-item">
+                            <div class="phase-icon">⚙️</div>
+                            <h3>Phase 3: Deployment</h3>
+                            <p>Implement ME5 components systematically</p>
+                        </div>
+                        <div class="phase-arrow">→</div>
+                        <div class="phase-item">
+                            <div class="phase-icon">📊</div>
+                            <h3>Phase 4: Optimization</h3>
+                            <p>Fine-tune and monitor performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="phase-details">
+            <div class="container">
+                <h2>📋 Phase 1: Security Assessment</h2>
+                <div class="phase-content">
+                    <div class="assessment-checklist">
+                        <h3>Current State Analysis</h3>
+                        <div class="checklist-category">
+                            <h4>🔐 Identity & Access Management</h4>
+                            <ul class="checklist">
+                                <li>☐ Document existing authentication methods</li>
+                                <li>☐ Identify privileged accounts and access patterns</li>
+                                <li>☐ Assess current MFA coverage</li>
+                                <li>☐ Review conditional access policies</li>
+                                <li>☐ Analyze token lifecycle management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="checklist-category">
+                            <h4>🖥️ Endpoint Security</h4>
+                            <ul class="checklist">
+                                <li>☐ Inventory all devices and operating systems</li>
+                                <li>☐ Evaluate current endpoint protection</li>
+                                <li>☐ Assess patch management processes</li>
+                                <li>☐ Review device compliance policies</li>
+                                <li>☐ Analyze endpoint monitoring capabilities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="checklist-category">
+                            <h4>🌐 Cloud Security</h4>
+                            <ul class="checklist">
+                                <li>☐ Map cloud applications and services</li>
+                                <li>☐ Review data classification and protection</li>
+                                <li>☐ Assess current CASB capabilities</li>
+                                <li>☐ Analyze cloud access patterns</li>
+                                <li>☐ Review incident response procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-assessment">
+                        <h3>🎯 Risk Assessment</h3>
+                        <div class="risk-matrix">
+                            <div class="risk-item high-risk">
+                                <h4>High Priority Risks</h4>
+                                <ul>
+                                    <li>Unprotected privileged accounts</li>
+                                    <li>Unmanaged devices accessing corporate data</li>
+                                    <li>No real-time threat detection</li>
+                                    <li>Limited visibility into cloud applications</li>
+                                </ul>
+                            </div>
+                            <div class="risk-item medium-risk">
+                                <h4>Medium Priority Risks</h4>
+                                <ul>
+                                    <li>Inconsistent security policies</li>
+                                    <li>Manual incident response processes</li>
+                                    <li>Limited security awareness training</li>
+                                    <li>Outdated security tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="planning-phase">
+            <div class="container">
+                <h2>🛠️ Phase 2: Planning & Architecture</h2>
+                <div class="planning-content">
+                    <div class="architecture-design">
+                        <h3>ME5 Architecture Components</h3>
+                        <div class="architecture-diagram">
+                            <div class="arch-layer">
+                                <h4>🔐 Identity Layer</h4>
+                                <div class="arch-components">
+                                    <div class="component">Entra ID Premium P2</div>
+                                    <div class="component">Conditional Access</div>
+                                    <div class="component">Identity Protection</div>
+                                    <div class="component">Privileged Identity Management</div>
+                                </div>
+                            </div>
+                            
+                            <div class="arch-layer">
+                                <h4>🖥️ Endpoint Layer</h4>
+                                <div class="arch-components">
+                                    <div class="component">Defender for Endpoint</div>
+                                    <div class="component">Intune Device Management</div>
+                                    <div class="component">Attack Surface Reduction</div>
+                                    <div class="component">Endpoint Detection & Response</div>
+                                </div>
+                            </div>
+                            
+                            <div class="arch-layer">
+                                <h4>🌐 Cloud Layer</h4>
+                                <div class="arch-components">
+                                    <div class="component">Defender for Cloud Apps</div>
+                                    <div class="component">Defender for Identity</div>
+                                    <div class="component">Information Protection</div>
+                                    <div class="component">Data Loss Prevention</div>
+                                </div>
+                            </div>
+                            
+                            <div class="arch-center">
+                                <h4>🧠 Intelligence Hub</h4>
+                                <div class="component">Microsoft 365 Defender XDR</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="deployment-strategy">
+                        <h3>📅 Deployment Timeline</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Week 1-2</div>
+                                <div class="timeline-content">
+                                    <h4>Foundation Setup</h4>
+                                    <ul>
+                                        <li>Configure Entra ID Premium P2</li>
+                                        <li>Set up basic Conditional Access policies</li>
+                                        <li>Enable Identity Protection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Week 3-4</div>
+                                <div class="timeline-content">
+                                    <h4>Endpoint Protection</h4>
+                                    <ul>
+                                        <li>Deploy Defender for Endpoint</li>
+                                        <li>Configure device compliance policies</li>
+                                        <li>Enable Attack Surface Reduction rules</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Week 5-6</div>
+                                <div class="timeline-content">
+                                    <h4>Cloud Security</h4>
+                                    <ul>
+                                        <li>Implement Defender for Cloud Apps</li>
+                                        <li>Configure cloud app policies</li>
+                                        <li>Set up data protection rules</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Week 7-8</div>
+                                <div class="timeline-content">
+                                    <h4>Integration & Optimization</h4>
+                                    <ul>
+                                        <li>Enable Microsoft 365 Defender XDR</li>
+                                        <li>Configure advanced hunting</li>
+                                        <li>Fine-tune policies and alerts</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="deployment-phase">
+            <div class="container">
+                <h2>⚙️ Phase 3: Deployment Steps</h2>
+                <div class="deployment-content">
+                    <div class="deployment-step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h3>🔐 Identity Foundation</h3>
+                        </div>
+                        <div class="step-content">
+                            <h4>Entra ID Configuration</h4>
+                            <div class="config-items">
+                                <div class="config-item">
+                                    <h5>✅ Enable Token Protection</h5>
+                                    <p>Configure device-bound tokens for Primary Refresh Tokens (PRTs)</p>
+                                    <code>Entra ID > Security > Conditional Access > Token Protection</code>
+                                </div>
+                                
+                                <div class="config-item">
+                                    <h5>✅ Continuous Access Evaluation</h5>
+                                    <p>Enable real-time access revocation capabilities</p>
+                                    <code>Conditional Access > Session > Use Continuous Access Evaluation</code>
+                                </div>
+                                
+                                <div class="config-item">
+                                    <h5>✅ Risk-Based Policies</h5>
+                                    <p>Configure user and sign-in risk policies</p>
+                                    <code>Identity Protection > User Risk Policy > Sign-in Risk Policy</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="deployment-step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h3>🖥️ Endpoint Protection</h3>
+                        </div>
+                        <div class="step-content">
+                            <h4>Defender for Endpoint Setup</h4>
+                            <div class="config-items">
+                                <div class="config-item">
+                                    <h5>✅ Onboard Devices</h5>
+                                    <p>Deploy MDE sensors to all endpoints</p>
+                                    <code>Security Center > Device Management > Onboarding</code>
+                                </div>
+                                
+                                <div class="config-item">
+                                    <h5>✅ Configure ASR Rules</h5>
+                                    <p>Enable Attack Surface Reduction rules</p>
+                                    <code>Endpoint Security > Attack Surface Reduction</code>
+                                </div>
+                                
+                                <div class="config-item">
+                                    <h5>✅ Web Protection</h5>
+                                    <p>Enable VPN-based web protection</p>
+                                    <code>Settings > Advanced Features > Web Protection</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="deployment-step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h3>🌐 Cloud App Security</h3>
+                        </div>
+                        <div class="step-content">
+                            <h4>Defender for Cloud Apps Configuration</h4>
+                            <div class="config-items">
+                                <div class="config-item">
+                                    <h5>✅ App Discovery</h5>
+                                    <p>Discover and assess cloud applications</p>
+                                    <code>Cloud Apps > Discover > App Discovery</code>
+                                </div>
+                                
+                                <div class="config-item">
+                                    <h5>✅ Conditional Access Integration</h5>
+                                    <p>Link cloud app policies with Conditional Access</p>
+                                    <code>Control > Conditional Access App Control</code>
+                                </div>
+                                
+                                <div class="config-item">
+                                    <h5>✅ AiTM Detection</h5>
+                                    <p>Enable Attacker-in-the-Middle detection</p>
+                                    <code>Investigate > Activity Log > AiTM Detection</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="optimization-phase">
+            <div class="container">
+                <h2>📊 Phase 4: Optimization & Monitoring</h2>
+                <div class="optimization-content">
+                    <div class="monitoring-dashboard">
+                        <h3>Key Performance Indicators</h3>
+                        <div class="kpi-grid">
+                            <div class="kpi-card">
+                                <div class="kpi-icon">🎯</div>
+                                <h4>Detection Rate</h4>
+                                <p>Monitor AiTM detection accuracy and threat identification rates</p>
+                                <div class="kpi-target">Target: >95% accuracy</div>
+                            </div>
+                            
+                            <div class="kpi-card">
+                                <div class="kpi-icon">⚡</div>
+                                <h4>Response Time</h4>
+                                <p>Measure time from detection to containment</p>
+                                <div class="kpi-target">Target: <5 minutes</div>
+                            </div>
+                            
+                            <div class="kpi-card">
+                                <div class="kpi-icon">🔒</div>
+                                <h4>Token Protection</h4>
+                                <p>Track device-bound token usage and effectiveness</p>
+                                <div class="kpi-target">Target: 100% coverage</div>
+                            </div>
+                            
+                            <div class="kpi-card">
+                                <div class="kpi-icon">📱</div>
+                                <h4>Device Compliance</h4>
+                                <p>Monitor endpoint compliance and protection status</p>
+                                <div class="kpi-target">Target: >98% compliant</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="continuous-improvement">
+                        <h3>🔄 Continuous Improvement</h3>
+                        <div class="improvement-areas">
+                            <div class="improvement-item">
+                                <h4>📈 Policy Refinement</h4>
+                                <ul>
+                                    <li>Review and adjust Conditional Access policies monthly</li>
+                                    <li>Fine-tune risk thresholds based on false positive rates</li>
+                                    <li>Update ASR rules based on threat landscape changes</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="improvement-item">
+                                <h4>🎓 Training & Awareness</h4>
+                                <ul>
+                                    <li>Regular security awareness training for users</li>
+                                    <li>SOC team training on new features and capabilities</li>
+                                    <li>Incident response drills and tabletop exercises</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="improvement-item">
+                                <h4>🔍 Threat Hunting</h4>
+                                <ul>
+                                    <li>Proactive hunting using advanced hunting queries</li>
+                                    <li>Custom detection rules for organization-specific threats</li>
+                                    <li>Integration with threat intelligence feeds</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-criteria">
+            <div class="container">
+                <h2>🏆 Success Criteria</h2>
+                <div class="success-metrics">
+                    <div class="success-category">
+                        <h3>Security Outcomes</h3>
+                        <div class="success-list">
+                            <div class="success-item">
+                                <div class="success-icon">✅</div>
+                                <p>Zero successful token replay attacks</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">✅</div>
+                                <p>99%+ AiTM attack detection rate</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">✅</div>
+                                <p>Sub-minute threat response times</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">✅</div>
+                                <p>100% device token binding coverage</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="success-category">
+                        <h3>Operational Benefits</h3>
+                        <div class="success-list">
+                            <div class="success-item">
+                                <div class="success-icon">📊</div>
+                                <p>Single pane of glass for security management</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">⚡</div>
+                                <p>80% reduction in manual security tasks</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">💰</div>
+                                <p>30% reduction in security tool licensing costs</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">👥</div>
+                                <p>Improved SOC team efficiency and satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps">
+            <div class="container">
+                <h2>🚀 Next Steps</h2>
+                <div class="next-steps-content">
+                    <div class="step-card">
+                        <div class="step-icon">📞</div>
+                        <h3>Contact Microsoft</h3>
+                        <p>Schedule a consultation with Microsoft security experts to assess your specific needs and create a customized implementation plan.</p>
+                        <a href="#" class="step-button">Schedule Consultation</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">🧪</div>
+                        <h3>Start Pilot Program</h3>
+                        <p>Begin with a pilot deployment in a limited environment to validate the approach and demonstrate value.</p>
+                        <a href="#" class="step-button">Request Pilot</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">📚</div>
+                        <h3>Access Resources</h3>
+                        <p>Download detailed technical documentation, best practices guides, and deployment tools.</p>
+                        <a href="#" class="step-button">Download Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

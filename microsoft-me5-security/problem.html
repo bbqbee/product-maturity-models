@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy of a Token Theft Attack - Microsoft ME5 Security</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft ME5 Security</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html" class="active">Attack Anatomy</a></li>
+                <li><a href="solution.html">ME5 Solution</a></li>
+                <li><a href="remediation.html">Auto Remediation</a></li>
+                <li><a href="entra-suite.html">Entra Suite</a></li>
+                <li><a href="comparison.html">Comparisons</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-secondary">
+            <div class="container">
+                <h1>🎯 Anatomy of a Token Theft Attack</h1>
+                <p class="hero-subtitle">Understanding the Complete Attack Chain</p>
+                <p class="hero-description">Explore how attackers exploit tokens—the digital keys that grant access to your data—and learn why traditional security measures fall short against sophisticated token theft techniques.</p>
+            </div>
+        </section>
+
+        <!-- Token Fundamentals -->
+        <section class="content-section">
+            <div class="container">
+                <h2>🔑 Tokens 101: The Digital Keys to Your Kingdom</h2>
+                
+                <div class="highlight-box">
+                    <h3>What is a Token?</h3>
+                    <p>A <strong>token</strong> is a digital authentication artifact that grants you access to resources. Think of it as a digital key that proves who you are and what you're allowed to do. When you sign into an identity provider (like Microsoft Entra ID), you receive tokens that describe your identity and permissions.</p>
+                </div>
+
+                <div class="token-analogy">
+                    <h3>🎢 The Amusement Park Analogy</h3>
+                    <div class="analogy-grid">
+                        <div class="analogy-item">
+                            <div class="analogy-icon">🎫</div>
+                            <h4>Identity Provider = Ticket Office</h4>
+                            <p>The place where you prove who you are and get your passes</p>
+                        </div>
+                        <div class="analogy-item">
+                            <div class="analogy-icon">🎟️</div>
+                            <h4>Session Token = Season Pass</h4>
+                            <p>Long-lived credential that proves you successfully signed in</p>
+                        </div>
+                        <div class="analogy-item">
+                            <div class="analogy-icon">🎠</div>
+                            <h4>Access Token = Ride Ticket</h4>
+                            <p>Short-lived permission to access a specific resource</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="token-flow">
+                    <h3>🔄 How Token Authentication Works</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Authentication</h4>
+                                <p>User signs into Entra ID with credentials + MFA</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Session Token Issued</h4>
+                                <p>Identity provider issues a session token (like a season pass)</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Resource Access</h4>
+                                <p>Session token exchanged for access tokens to specific apps</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Seamless Experience</h4>
+                                <p>User accesses resources without repeated authentication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attack Anatomy -->
+        <section class="content-section attack-section">
+            <div class="container">
+                <h2>🚨 The Token Theft Attack Chain</h2>
+                
+                <div class="warning-box">
+                    <h3>💣 Why Token Theft is So Dangerous</h3>
+                    <p>When attackers steal your token, it's like making a photocopy of your season pass. They can use their copy to access your resources while the original stays in your pocket—meaning you might never know you've been compromised until it's too late.</p>
+                </div>
+
+                <div class="attack-timeline">
+                    <h3>⏰ Real-World Attack Scenario: The Complete Chain</h3>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-event">
+                            <div class="event-marker phase-1">1</div>
+                            <div class="event-content">
+                                <h4>📧 Initial Compromise (T+0)</h4>
+                                <div class="event-details">
+                                    <p><strong>Attack Vector:</strong> Sophisticated phishing email</p>
+                                    <p><strong>What Happens:</strong> Employee receives convincing email from "IT Support" about mandatory security update</p>
+                                    <p><strong>User Action:</strong> Clicks malicious link, enters credentials on fake login page</p>
+                                    <p><strong>Attacker Goal:</strong> Capture initial credentials and bypass MFA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <div class="event-marker phase-2">2</div>
+                            <div class="event-content">
+                                <h4>🎭 Attacker-in-the-Middle (T+30 seconds)</h4>
+                                <div class="event-details">
+                                    <p><strong>Attack Vector:</strong> Reverse proxy interception</p>
+                                    <p><strong>What Happens:</strong> Malicious site acts as invisible middleman between user and real Microsoft login</p>
+                                    <p><strong>Stealth Factor:</strong> User completes real MFA, gets access to real systems</p>
+                                    <p><strong>Critical Theft:</strong> Attacker copies session tokens in real-time during legitimate login</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <div class="event-marker phase-3">3</div>
+                            <div class="event-content">
+                                <h4>🔐 Token Extraction (T+2 minutes)</h4>
+                                <div class="event-details">
+                                    <p><strong>Attack Vector:</strong> Malware deployment</p>
+                                    <p><strong>What Happens:</strong> Malicious payload installed via the initial phishing link</p>
+                                    <p><strong>Target:</strong> Browser cookies, Local Security Authority (LSA) memory, cached credentials</p>
+                                    <p><strong>Prize:</strong> Primary Refresh Token (PRT) - the "master key" that provides long-term access</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <div class="event-marker phase-4">4</div>
+                            <div class="event-content">
+                                <h4>📤 Token Exfiltration (T+5 minutes)</h4>
+                                <div class="event-details">
+                                    <p><strong>Attack Vector:</strong> Encrypted communication channel</p>
+                                    <p><strong>What Happens:</strong> Stolen tokens transmitted to attacker-controlled servers</p>
+                                    <p><strong>Stealth Factor:</strong> Communication looks like normal HTTPS traffic</p>
+                                    <p><strong>Scale:</strong> Multiple token types collected for maximum access</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <div class="event-marker phase-5">5</div>
+                            <div class="event-content">
+                                <h4>🎯 Token Replay Attack (T+15 minutes)</h4>
+                                <div class="event-details">
+                                    <p><strong>Attack Vector:</strong> Remote token replay from different location</p>
+                                    <p><strong>What Happens:</strong> Attacker uses stolen tokens from their own infrastructure</p>
+                                    <p><strong>Impersonation:</strong> Perfect mimicry of legitimate user session</p>
+                                    <p><strong>Bypass:</strong> All traditional security controls (MFA, device policies) already satisfied</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <div class="event-marker phase-6">6</div>
+                            <div class="event-content">
+                                <h4>💰 Data Exfiltration (T+30 minutes)</h4>
+                                <div class="event-details">
+                                    <p><strong>Attack Vector:</strong> Authorized access using stolen tokens</p>
+                                    <p><strong>What Happens:</strong> Mass download of sensitive documents, emails, customer data</p>
+                                    <p><strong>Persistence:</strong> New access tokens generated using stolen session tokens</p>
+                                    <p><strong>Business Impact:</strong> Potential exposure of confidential data worth millions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attack-methods">
+                    <h3>🔍 Common Token Theft Techniques</h3>
+                    <div class="methods-grid">
+                        <div class="method-item high-risk">
+                            <div class="risk-indicator">🔴 High Risk</div>
+                            <h4>🎭 Attacker-in-the-Middle (AiTM)</h4>
+                            <p><strong>How it works:</strong> Reverse proxy sites intercept login credentials and session tokens in real-time during authentication</p>
+                            <p><strong>Stealth factor:</strong> User completes legitimate MFA while attacker steals tokens invisibly</p>
+                            <p><strong>Detection rate:</strong> Very low - appears as normal login traffic</p>
+                        </div>
+                        
+                        <div class="method-item high-risk">
+                            <div class="risk-indicator">🔴 High Risk</div>
+                            <h4>🦠 Malware Token Extraction</h4>
+                            <p><strong>How it works:</strong> Malicious software extracts tokens from browser memory, LSA, or cached credentials</p>
+                            <p><strong>Targets:</strong> Primary Refresh Tokens (PRTs), browser cookies, authentication artifacts</p>
+                            <p><strong>Persistence:</strong> Can operate for months before detection</p>
+                        </div>
+                        
+                        <div class="method-item medium-risk">
+                            <div class="risk-indicator">🟡 Medium Risk</div>
+                            <h4>🌐 Network Interception</h4>
+                            <p><strong>How it works:</strong> Compromised network infrastructure captures tokens in transit</p>
+                            <p><strong>Attack points:</strong> Rogue WiFi, compromised routers, man-in-the-middle proxies</p>
+                            <p><strong>Mitigation:</strong> HTTPS encryption limits but doesn't eliminate risk</p>
+                        </div>
+                        
+                        <div class="method-item medium-risk">
+                            <div class="risk-indicator">🟡 Medium Risk</div>
+                            <h4>📝 Log File Harvesting</h4>
+                            <p><strong>How it works:</strong> Attackers extract tokens from unsecured application or server logs</p>
+                            <p><strong>Common sources:</strong> Web server logs, application debug files, error logs</p>
+                            <p><strong>Scale:</strong> Can provide access to thousands of users simultaneously</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Impact -->
+        <section class="content-section impact-section">
+            <div class="container">
+                <h2>💸 The Devastating Business Impact</h2>
+                
+                <div class="impact-stats">
+                    <div class="stat-item critical">
+                        <div class="stat-number">$4.45M</div>
+                        <div class="stat-label">Average cost of a data breach (2023)</div>
+                        <div class="stat-detail">Includes detection, containment, notification, and recovery costs</div>
+                    </div>
+                    <div class="stat-item critical">
+                        <div class="stat-number">277 days</div>
+                        <div class="stat-label">Average time to identify and contain breach</div>
+                        <div class="stat-detail">Most token theft attacks go undetected for months</div>
+                    </div>
+                    <div class="stat-item warning">
+                        <div class="stat-number">111%</div>
+                        <div class="stat-label">Year-over-year increase in token replay attacks</div>
+                        <div class="stat-detail">147,000 token replay attacks detected by Microsoft in 2023</div>
+                    </div>
+                    <div class="stat-item warning">
+                        <div class="stat-number">83%</div>
+                        <div class="stat-label">Of breaches involve stolen credentials or tokens</div>
+                        <div class="stat-detail">Token theft is becoming the preferred attack method</div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>📋 Case Study: Contoso Corporation Attack</h3>
+                    <div class="case-study-content">
+                        <div class="case-study-scenario">
+                            <h4>The Scenario</h4>
+                            <p>Contoso Corporation, a mid-size consulting firm, requires MFA for accessing their cloud-based document storage containing sensitive client data and intellectual property.</p>
+                        </div>
+                        
+                        <div class="case-study-timeline">
+                            <h4>The Attack Timeline</h4>
+                            <div class="case-timeline">
+                                <div class="case-event">
+                                    <span class="case-time">9:15 AM</span>
+                                    <span class="case-action">Employee clicks phishing link, enters credentials on fake site</span>
+                                </div>
+                                <div class="case-event">
+                                    <span class="case-time">9:16 AM</span>
+                                    <span class="case-action">Malware installed, begins token extraction process</span>
+                                </div>
+                                <div class="case-event">
+                                    <span class="case-time">9:20 AM</span>
+                                    <span class="case-action">Session tokens and PRT successfully stolen and transmitted</span>
+                                </div>
+                                <div class="case-event">
+                                    <span class="case-time">9:30 AM</span>
+                                    <span class="case-action">Attacker begins accessing Contoso's cloud storage using stolen tokens</span>
+                                </div>
+                                <div class="case-event">
+                                    <span class="case-time">10:00 AM</span>
+                                    <span class="case-action">Mass download begins: client contracts, financial data, strategic plans</span>
+                                </div>
+                                <div class="case-event">
+                                    <span class="case-time">2 weeks later</span>
+                                    <span class="case-action">Stolen documents surface on dark web, regulatory investigation begins</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="case-study-impact">
+                            <h4>The Business Impact</h4>
+                            <ul class="impact-list">
+                                <li><strong>Direct Financial Loss:</strong> $2.3M in incident response, legal fees, and regulatory fines</li>
+                                <li><strong>Client Loss:</strong> 40% of clients terminated contracts due to breach</li>
+                                <li><strong>Reputation Damage:</strong> 6-month recovery period for brand trust</li>
+                                <li><strong>Operational Disruption:</strong> 3 weeks of limited operations during investigation</li>
+                                <li><strong>Competitive Disadvantage:</strong> Strategic plans leaked to competitors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Traditional Security Fails -->
+        <section class="content-section failure-section">
+            <div class="container">
+                <h2>🔓 Why Traditional Security Measures Fail</h2>
+                
+                <div class="failure-reasons">
+                    <div class="failure-item">
+                        <div class="failure-icon">🔐</div>
+                        <h3>MFA Bypass</h3>
+                        <p>Attackers steal tokens <em>after</em> MFA completion, making multi-factor authentication irrelevant. The user successfully proves their identity, but the attacker intercepts the resulting tokens.</p>
+                    </div>
+                    
+                    <div class="failure-item">
+                        <div class="failure-icon">🖥️</div>
+                        <h3>Device Trust Circumvention</h3>
+                        <p>Stolen tokens work from any device, bypassing device-based security policies. Attackers don't need to compromise the original device—they just need the tokens.</p>
+                    </div>
+                    
+                    <div class="failure-item">
+                        <div class="failure-icon">🌍</div>
+                        <h3>Location Controls Ineffective</h3>
+                        <p>Session tokens often have long lifetimes (hours to days), allowing attackers time to use VPNs or other methods to appear from trusted locations.</p>
+                    </div>
+                    
+                    <div class="failure-item">
+                        <div class="failure-icon">⏰</div>
+                        <h3>Delayed Detection</h3>
+                        <p>Traditional security tools can't distinguish between legitimate token use and replay attacks—both look identical to access control systems.</p>
+                    </div>
+                </div>
+
+                <div class="detection-challenge">
+                    <h3>🕵️ The Detection Challenge</h3>
+                    <div class="challenge-content">
+                        <p>The fundamental problem with token theft is that <strong>stolen tokens are indistinguishable from legitimate tokens</strong>. When an attacker uses a stolen token:</p>
+                        <ul class="challenge-list">
+                            <li>✅ The token is cryptographically valid</li>
+                            <li>✅ The user appears to be properly authenticated</li>
+                            <li>✅ All security policies appear to be satisfied</li>
+                            <li>✅ The access patterns may look normal</li>
+                            <li>❌ There's no obvious indicator of compromise</li>
+                        </ul>
+                        <p>This is why traditional security solutions struggle to detect and prevent token theft attacks—they're designed to verify credentials, not to ensure those credentials weren't stolen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>🛡️ Ready to Break the Attack Chain?</h2>
+                <p>Now that you understand how devastating token theft attacks can be, let's explore how Microsoft ME5 provides comprehensive protection against these sophisticated threats.</p>
+                <div class="cta-buttons">
+                    <a href="solution.html" class="cta-button primary">Explore ME5 Solution →</a>
+                    <a href="remediation.html" class="cta-button secondary">See Automatic Response →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+            <p>Reference: <a href="https://techcommunity.microsoft.com/blog/microsoft-entra-blog/how-to-break-the-token-theft-cyber-attack-chain/4062700" target="_blank">How to break the token theft cyber-attack chain</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

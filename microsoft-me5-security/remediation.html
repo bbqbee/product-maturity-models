@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Threat Remediation - Microsoft ME5 Security</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft ME5 Security</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Attack Anatomy</a></li>
+                <li><a href="solution.html">ME5 Solution</a></li>
+                <li><a href="remediation.html" class="active">Auto Remediation</a></li>
+                <li><a href="entra-suite.html">Entra Suite</a></li>
+                <li><a href="comparison.html">Comparisons</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>🤖 Automatic Threat Remediation</h1>
+                <p class="page-subtitle">How Defender XDR Stops Token Theft in Real-Time</p>
+            </div>
+        </section>
+
+        <section class="remediation-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <h2>Automated Response in Action</h2>
+                    <p>Microsoft Defender XDR doesn't just detect token theft—it automatically responds with coordinated remediation actions across your entire security estate. See how machine learning and AI-driven automation stop attacks before they can cause damage.</p>
+                    
+                    <div class="response-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">< 60 seconds</div>
+                            <div class="stat-label">Average Detection to Remediation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.5%</div>
+                            <div class="stat-label">Automated Response Success Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Zero Touch</div>
+                            <div class="stat-label">SOC Analyst Intervention Required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="attack-timeline">
+            <div class="container">
+                <h2>🕐 Real-Time Attack Remediation Timeline</h2>
+                <p class="timeline-intro">Watch how Defender XDR responds to a live token theft attack with coordinated, automated actions across multiple security layers.</p>
+                
+                <div class="timeline-container">
+                    <div class="timeline-event attack">
+                        <div class="timeline-time">T+0s</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🎣</div>
+                            <h3>Phishing Email Delivered</h3>
+                            <p><strong>Attack Vector:</strong> User receives convincing phishing email with malicious link</p>
+                            <div class="event-details">
+                                <p>• Email bypasses traditional security filters</p>
+                                <p>• Contains link to attacker-controlled proxy site</p>
+                                <p>• Targets high-value employee credentials</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event detection">
+                        <div class="timeline-time">T+15s</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🔍</div>
+                            <h3>Initial Detection Signals</h3>
+                            <p><strong>Defender XDR Action:</strong> Multiple detection engines activate simultaneously</p>
+                            <div class="event-details">
+                                <p>• <strong>Email & Collaboration:</strong> Suspicious URL patterns detected</p>
+                                <p>• <strong>Endpoint:</strong> User navigation to untrusted domain flagged</p>
+                                <p>• <strong>Identity:</strong> Authentication anomaly scoring begins</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event analysis">
+                        <div class="timeline-time">T+30s</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🧠</div>
+                            <h3>AI-Powered Threat Analysis</h3>
+                            <p><strong>XDR Intelligence:</strong> Cross-signal correlation and risk assessment</p>
+                            <div class="event-details">
+                                <p>• <strong>Behavior Analysis:</strong> User interaction patterns analyzed</p>
+                                <p>• <strong>Threat Intelligence:</strong> Domain reputation and infrastructure analysis</p>
+                                <p>• <strong>Risk Scoring:</strong> Dynamic threat score calculated (95/100)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event compromise">
+                        <div class="timeline-time">T+45s</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🚨</div>
+                            <h3>Token Theft Detected</h3>
+                            <p><strong>Critical Alert:</strong> AiTM attack confirmed with 99% confidence</p>
+                            <div class="event-details">
+                                <p>• <strong>Identity Protection:</strong> Suspicious sign-in activity detected</p>
+                                <p>• <strong>Session Analysis:</strong> Token replay attempt identified</p>
+                                <p>• <strong>Device Fingerprinting:</strong> Unauthorized device access detected</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event remediation-start">
+                        <div class="timeline-time">T+50s</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">⚡</div>
+                            <h3>Automatic Remediation Initiated</h3>
+                            <p><strong>Coordinated Response:</strong> Multi-layer remediation actions triggered</p>
+                            <div class="event-details">
+                                <p>• <strong>Incident Created:</strong> High-priority incident automatically generated</p>
+                                <p>• <strong>Response Plan:</strong> Pre-defined playbook executed</p>
+                                <p>• <strong>Stakeholders Notified:</strong> SOC team alerted with full context</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event containment">
+                        <div class="timeline-time">T+55s</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🔒</div>
+                            <h3>Immediate Containment Actions</h3>
+                            <p><strong>Attack Disruption:</strong> Multiple containment measures deployed instantly</p>
+                            <div class="remediation-actions">
+                                <div class="action-category identity">
+                                    <h4>🔐 Identity Actions</h4>
+                                    <ul>
+                                        <li>✅ User account disabled immediately</li>
+                                        <li>✅ All active sessions terminated</li>
+                                        <li>✅ Tokens revoked via CAE</li>
+                                        <li>✅ MFA reset required</li>
+                                    </ul>
+                                </div>
+                                <div class="action-category endpoint">
+                                    <h4>🖥️ Endpoint Actions</h4>
+                                    <ul>
+                                        <li>✅ Device isolated from network</li>
+                                        <li>✅ Malicious processes terminated</li>
+                                        <li>✅ Browser data cleared</li>
+                                        <li>✅ Device flagged for investigation</li>
+                                    </ul>
+                                </div>
+                                <div class="action-category email">
+                                    <h4>📧 Email & Collaboration Actions</h4>
+                                    <ul>
+                                        <li>✅ Phishing email deleted from all mailboxes</li>
+                                        <li>✅ Similar emails quarantined organization-wide</li>
+                                        <li>✅ Malicious URLs blocked globally</li>
+                                        <li>✅ User education notification sent</li>
+                                    </ul>
+                                </div>
+                                <div class="action-category cloud">
+                                    <h4>☁️ Cloud Security Actions</h4>
+                                    <ul>
+                                        <li>✅ Cloud app access blocked</li>
+                                        <li>✅ Data access permissions reviewed</li>
+                                        <li>✅ File activities monitored</li>
+                                        <li>✅ Conditional access policies updated</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event investigation">
+                        <div class="timeline-time">T+2m</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🔍</div>
+                            <h3>Automated Investigation</h3>
+                            <p><strong>Deep Analysis:</strong> AI-driven investigation gathers complete attack context</p>
+                            <div class="event-details">
+                                <p>• <strong>Attack Chain Reconstruction:</strong> Full timeline of events mapped</p>
+                                <p>• <strong>Impact Assessment:</strong> Scope of compromise determined</p>
+                                <p>• <strong>Evidence Collection:</strong> Artifacts preserved for forensics</p>
+                                <p>• <strong>Similar Threats:</strong> Organization scanned for related attacks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event recovery">
+                        <div class="timeline-time">T+5m</div>
+                        <div class="timeline-content">
+                            <div class="event-icon">🔄</div>
+                            <h3>Recovery & Hardening</h3>
+                            <p><strong>Proactive Protection:</strong> Automated steps to prevent future attacks</p>
+                            <div class="event-details">
+                                <p>• <strong>Policy Updates:</strong> Security policies strengthened automatically</p>
+                                <p>• <strong>Threat Intelligence:</strong> IoCs shared across security ecosystem</p>
+                                <p>• <strong>User Education:</strong> Targeted training delivered to affected users</p>
+                                <p>• <strong>Monitoring Enhanced:</strong> Additional detection rules deployed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="xdr-capabilities">
+            <div class="container">
+                <h2>🧠 Defender XDR Intelligence Engine</h2>
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <div class="capability-icon">🤖</div>
+                        <h3>Machine Learning Detection</h3>
+                        <p><strong>Advanced AI models</strong> analyze billions of signals daily to identify novel attack patterns and zero-day threats</p>
+                        <div class="capability-stats">
+                            <div class="stat">43 trillion signals/day</div>
+                            <div class="stat">8+ billion threat queries/day</div>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">🔗</div>
+                        <h3>Cross-Signal Correlation</h3>
+                        <p><strong>Unified telemetry</strong> from endpoint, identity, email, and cloud creates complete attack visibility</p>
+                        <div class="capability-stats">
+                            <div class="stat">500+ data sources</div>
+                            <div class="stat">Real-time correlation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">⚡</div>
+                        <h3>Automated Response</h3>
+                        <p><strong>Pre-configured playbooks</strong> execute coordinated remediation actions across all security layers</p>
+                        <div class="capability-stats">
+                            <div class="stat">200+ automated actions</div>
+                            <div class="stat">Sub-minute response</div>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">🎯</div>
+                        <h3>Threat Hunting</h3>
+                        <p><strong>Proactive hunting</strong> capabilities search for advanced threats across the entire environment</p>
+                        <div class="capability-stats">
+                            <div class="stat">Advanced KQL queries</div>
+                            <div class="stat">Historical data analysis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="remediation-scenarios">
+            <div class="container">
+                <h2>🎭 Common Attack Scenarios & Automated Responses</h2>
+                <div class="scenarios-grid">
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🎣</div>
+                            <h3>Business Email Compromise (BEC)</h3>
+                        </div>
+                        <div class="scenario-content">
+                            <div class="attack-details">
+                                <h4>Attack Pattern:</h4>
+                                <p>Compromised executive account sends fraudulent wire transfer requests</p>
+                            </div>
+                            <div class="auto-response">
+                                <h4>Automated Response:</h4>
+                                <ul>
+                                    <li>🔒 Account immediately disabled</li>
+                                    <li>📧 Fraudulent emails recalled and deleted</li>
+                                    <li>🚨 Finance team automatically notified</li>
+                                    <li>🔍 Email flow analysis conducted</li>
+                                    <li>📋 Incident escalated to leadership</li>
+                                </ul>
+                            </div>
+                            <div class="response-time">Response Time: < 30 seconds</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🔄</div>
+                            <h3>Token Replay Attack</h3>
+                        </div>
+                        <div class="scenario-content">
+                            <div class="attack-details">
+                                <h4>Attack Pattern:</h4>
+                                <p>Stolen authentication tokens used from unauthorized location/device</p>
+                            </div>
+                            <div class="auto-response">
+                                <h4>Automated Response:</h4>
+                                <ul>
+                                    <li>⚡ Tokens invalidated via CAE</li>
+                                    <li>🖥️ Unauthorized device isolated</li>
+                                    <li>🔐 User required to re-authenticate</li>
+                                    <li>📍 Location-based access blocked</li>
+                                    <li>🛡️ Additional MFA challenges enforced</li>
+                                </ul>
+                            </div>
+                            <div class="response-time">Response Time: < 15 seconds</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🎭</div>
+                            <h3>Attacker-in-the-Middle (AiTM)</h3>
+                        </div>
+                        <div class="scenario-content">
+                            <div class="attack-details">
+                                <h4>Attack Pattern:</h4>
+                                <p>Reverse proxy intercepts credentials and session tokens during login</p>
+                            </div>
+                            <div class="auto-response">
+                                <h4>Automated Response:</h4>
+                                <ul>
+                                    <li>🚨 Proxy infrastructure identified and blocked</li>
+                                    <li>🔒 Compromised session immediately terminated</li>
+                                    <li>🌐 Malicious domains added to global blocklist</li>
+                                    <li>👥 Similar attacks across organization detected</li>
+                                    <li>📚 User security awareness training triggered</li>
+                                </ul>
+                            </div>
+                            <div class="response-time">Response Time: < 45 seconds</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🔓</div>
+                            <h3>Privilege Escalation</h3>
+                        </div>
+                        <div class="scenario-content">
+                            <div class="attack-details">
+                                <h4>Attack Pattern:</h4>
+                                <p>Compromised account attempts to access high-privilege resources</p>
+                            </div>
+                            <div class="auto-response">
+                                <h4>Automated Response:</h4>
+                                <ul>
+                                    <li>🛑 Privileged access immediately revoked</li>
+                                    <li>🔍 Account activities forensically analyzed</li>
+                                    <li>🎫 All service tickets invalidated</li>
+                                    <li>👮 Security team notified with evidence</li>
+                                    <li>📊 Risk score dynamically updated</li>
+                                </ul>
+                            </div>
+                            <div class="response-time">Response Time: < 20 seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analyst-dashboard">
+            <div class="container">
+                <h2>👨‍💻 SOC Analyst Experience</h2>
+                <div class="dashboard-demo">
+                    <div class="dashboard-header">
+                        <h3>Microsoft 365 Defender - Incident Dashboard</h3>
+                        <div class="dashboard-stats">
+                            <div class="dash-stat">
+                                <span class="stat-label">Active Incidents</span>
+                                <span class="stat-value">3</span>
+                            </div>
+                            <div class="dash-stat">
+                                <span class="stat-label">Auto-Resolved Today</span>
+                                <span class="stat-value">47</span>
+                            </div>
+                            <div class="dash-stat">
+                                <span class="stat-label">Response Time Avg</span>
+                                <span class="stat-value">42s</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="incident-details">
+                        <div class="incident-card resolved">
+                            <div class="incident-header">
+                                <div class="incident-id">#INC-2025-1007-001</div>
+                                <div class="incident-status resolved">AUTO-RESOLVED</div>
+                                <div class="incident-time">10:23 AM</div>
+                            </div>
+                            <div class="incident-title">
+                                <h4>🎣 Multi-stage AiTM Attack - Token Theft Attempt</h4>
+                            </div>
+                            <div class="incident-summary">
+                                <p><strong>User:</strong> sarah.johnson@contoso.com</p>
+                                <p><strong>Attack Vector:</strong> Phishing email → Malicious proxy → Token theft</p>
+                                <p><strong>Actions Taken:</strong> Account disabled, tokens revoked, device isolated, emails recalled</p>
+                                <p><strong>Status:</strong> Threat neutralized, user notified, security training scheduled</p>
+                            </div>
+                            <div class="incident-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Detection Time:</span>
+                                    <span class="metric-value">30s</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Remediation Time:</span>
+                                    <span class="metric-value">55s</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Impact:</span>
+                                    <span class="metric-value">Contained</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="analyst-benefits">
+                        <h3>Benefits for SOC Teams</h3>
+                        <div class="benefits-list">
+                            <div class="benefit">
+                                <div class="benefit-icon">⏰</div>
+                                <div class="benefit-content">
+                                    <h4>95% Reduction in Response Time</h4>
+                                    <p>From hours of manual investigation to seconds of automated response</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit-icon">🎯</div>
+                                <div class="benefit-content">
+                                    <h4>85% Fewer False Positives</h4>
+                                    <p>AI-powered correlation reduces alert fatigue and improves focus</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit-icon">📈</div>
+                                <div class="benefit-content">
+                                    <h4>300% Increase in Threat Coverage</h4>
+                                    <p>Unified visibility across all attack vectors and techniques</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit-icon">🧠</div>
+                                <div class="benefit-content">
+                                    <h4>Smart Incident Prioritization</h4>
+                                    <p>Risk-based scoring ensures critical threats get immediate attention</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Experience Automated Protection</h2>
+                    <p>See how Defender XDR can transform your security operations with intelligent, automated threat response.</p>
+                    <div class="cta-buttons">
+                        <a href="comparison.html" class="cta-button">Compare Solutions →</a>
+                        <a href="implementation.html" class="cta-button secondary">Start Implementation →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

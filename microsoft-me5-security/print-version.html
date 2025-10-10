@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft ME5 Token Protection - Complete Guide</title>
+    <style>
+        /* Print-optimized styles */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #323130;
+            background: white;
+            margin: 0;
+            padding: 20px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        
+        .cover-page {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 2px solid #0078d4;
+            margin-bottom: 3rem;
+            page-break-after: always;
+        }
+        
+        .cover-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0078d4;
+            margin-bottom: 1rem;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.5rem;
+            color: #605e5c;
+            margin-bottom: 2rem;
+        }
+        
+        .cover-description {
+            font-size: 1.1rem;
+            color: #323130;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .toc {
+            page-break-after: always;
+            margin-bottom: 3rem;
+        }
+        
+        .toc h2 {
+            color: #0078d4;
+            border-bottom: 2px solid #0078d4;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted #d2d0ce;
+        }
+        
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            page-break-inside: avoid;
+        }
+        
+        .section h1 {
+            color: #0078d4;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #0078d4;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h2 {
+            color: #323130;
+            font-size: 2rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 4px solid #0078d4;
+            padding-left: 1rem;
+        }
+        
+        .section h3 {
+            color: #323130;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .tier-box {
+            border: 2px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            background: #f8f9fa;
+            page-break-inside: avoid;
+        }
+        
+        .tier-box.good {
+            border-color: #107c10;
+            background: #f0fff0;
+        }
+        
+        .tier-box.better {
+            border-color: #0078d4;
+            background: #f0f8ff;
+        }
+        
+        .tier-box.best {
+            border-color: #ca5010;
+            background: #fff8f0;
+        }
+        
+        .tier-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tier-badge.good {
+            background: #107c10;
+            color: white;
+        }
+        
+        .tier-badge.better {
+            background: #0078d4;
+            color: white;
+        }
+        
+        .tier-badge.best {
+            background: #ca5010;
+            color: white;
+        }
+        
+        .capability-list {
+            margin: 1rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .capability-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f3f2f1;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .capability-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #107c10;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .capability-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .technical-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0078d4;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .timeline {
+            margin: 1.5rem 0;
+        }
+        
+        .timeline-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f2f1;
+        }
+        
+        .timeline-step:last-child {
+            border-bottom: none;
+        }
+        
+        .time {
+            font-weight: 600;
+            color: #ca5010;
+            min-width: 3rem;
+            font-size: 0.9rem;
+        }
+        
+        .action {
+            color: #323130;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th {
+            background: #0078d4;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #f3f2f1;
+            vertical-align: top;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .attack-phase {
+            background: #fff4f4;
+            border: 1px solid #d13438;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            page-break-inside: avoid;
+        }
+        
+        .attack-phase h3 {
+            color: #d13438;
+            margin-top: 0;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #0078d4;
+            text-align: center;
+            color: #605e5c;
+            font-size: 0.9rem;
+        }
+        
+        .reference-link {
+            color: #0078d4;
+            text-decoration: none;
+        }
+        
+        /* Specific print styles */
+        @media print {
+            .section {
+                page-break-before: always;
+            }
+            
+            .section:first-of-type {
+                page-break-before: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1 class="cover-title">🛡️ Breaking the Token Theft Cyber-Attack Chain</h1>
+        <p class="cover-subtitle">Microsoft ME5 Security Solutions Guide</p>
+        <div class="cover-description">
+            <p>A comprehensive guide to understanding token theft attacks and implementing Microsoft's Good, Better, Best licensing approach for ultimate protection through Entra ID P1, P2, and Microsoft 365 E5.</p>
+            <p><strong>Date:</strong> October 2025</p>
+            <p><strong>Version:</strong> 2.0 - Microsoft Licensing Focus</p>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>📋 Table of Contents</h2>
+        <div class="toc-item">
+            <span>1. Executive Summary</span>
+            <span>Page 3</span>
+        </div>
+        <div class="toc-item">
+            <span>2. Token Theft Attack Anatomy</span>
+            <span>Page 4</span>
+        </div>
+        <div class="toc-item">
+            <span>3. Microsoft Licensing Approach: Good, Better, Best</span>
+            <span>Page 6</span>
+        </div>
+        <div class="toc-item">
+            <span>4. GOOD: Entra ID P1 Foundation</span>
+            <span>Page 7</span>
+        </div>
+        <div class="toc-item">
+            <span>5. BETTER: Entra ID P2 Advanced Protection</span>
+            <span>Page 10</span>
+        </div>
+        <div class="toc-item">
+            <span>6. BEST: Microsoft 365 E5 Complete Solution</span>
+            <span>Page 13</span>
+        </div>
+        <div class="toc-item">
+            <span>7. Implementation Roadmap</span>
+            <span>Page 16</span>
+        </div>
+        <div class="toc-item">
+            <span>8. References and Resources</span>
+            <span>Page 17</span>
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="section page-break">
+        <h1>1. 📊 Executive Summary</h1>
+        
+        <p>Token theft represents one of the most sophisticated and dangerous attack vectors in modern cybersecurity. Attackers use various techniques to steal authentication tokens, allowing them to bypass multi-factor authentication and gain unauthorized access to corporate resources.</p>
+        
+        <p>Microsoft provides a comprehensive, layered approach to token theft protection through three distinct licensing tiers:</p>
+        
+        <div class="tier-box good no-break">
+            <div class="tier-header">
+                <div class="tier-badge good">✅ GOOD</div>
+                <h3>Entra ID P1 - Foundation</h3>
+                <p>Basic token protection with conditional access policies and app protection.</p>
+            </div>
+        </div>
+        
+        <div class="tier-box better no-break">
+            <div class="tier-header">
+                <div class="tier-badge better">⭐ BETTER</div>
+                <h3>Entra ID P2 - Advanced Detection</h3>
+                <p>Intelligent risk detection and automated response capabilities.</p>
+            </div>
+        </div>
+        
+        <div class="tier-box best no-break">
+            <div class="tier-header">
+                <div class="tier-badge best">🏆 BEST</div>
+                <h3>Microsoft 365 E5 - Complete Solution</h3>
+                <p>Comprehensive protection with automatic threat detection and remediation.</p>
+            </div>
+        </div>
+        
+        <h2>Key Benefits</h2>
+        <ul class="capability-list">
+            <li><strong>Progressive Enhancement:</strong> Build security capabilities incrementally</li>
+            <li><strong>Cost-Effective Scaling:</strong> Invest based on your risk profile</li>
+            <li><strong>Integrated Protection:</strong> Seamless security across Microsoft ecosystem</li>
+            <li><strong>Automatic Response:</strong> Reduce human intervention requirements</li>
+        </ul>
+    </div>
+
+    <!-- Token Theft Attack Anatomy -->
+    <div class="section page-break">
+        <h1>2. 🔍 Token Theft Attack Anatomy</h1>
+        
+        <p>Understanding the token theft attack chain is crucial for implementing effective defenses. Modern attacks follow a predictable pattern that Microsoft's security solutions are specifically designed to disrupt.</p>
+        
+        <h2>The Attack Chain</h2>
+        
+        <div class="attack-phase">
+            <h3>Phase 1: Initial Compromise (T+0 to T+5 minutes)</h3>
+            <ul>
+                <li><strong>Phishing Email:</strong> User receives convincing email with malicious link</li>
+                <li><strong>Credential Harvesting:</strong> Fake login page captures username/password</li>
+                <li><strong>MFA Bypass:</strong> Attacker-in-the-Middle (AiTM) captures MFA token</li>
+            </ul>
+        </div>
+        
+        <div class="attack-phase">
+            <h3>Phase 2: Token Extraction (T+5 to T+15 minutes)</h3>
+            <ul>
+                <li><strong>Session Cookie Theft:</strong> Browser session tokens extracted</li>
+                <li><strong>Primary Refresh Token (PRT) Theft:</strong> Device-level tokens compromised</li>
+                <li><strong>Cloud Authentication Token Theft:</strong> Application-specific tokens stolen</li>
+            </ul>
+        </div>
+        
+        <div class="attack-phase">
+            <h3>Phase 3: Lateral Movement (T+15 minutes to T+24 hours)</h3>
+            <ul>
+                <li><strong>Token Replay:</strong> Stolen tokens used from attacker's infrastructure</li>
+                <li><strong>Resource Access:</strong> Email, SharePoint, and cloud applications accessed</li>
+                <li><strong>Data Exfiltration:</strong> Sensitive information downloaded or shared</li>
+            </ul>
+        </div>
+        
+        <div class="technical-box">
+            <h3>🎯 Why Traditional Defenses Fail</h3>
+            <p><strong>Token-based attacks bypass traditional security measures because:</strong></p>
+            <ul>
+                <li>Stolen tokens appear as legitimate authentication</li>
+                <li>No need to crack passwords or bypass MFA</li>
+                <li>Attacks can be executed from any global location</li>
+                <li>Detection requires behavioral analysis, not signature matching</li>
+            </ul>
+        </div>
+        
+        <h2>Critical Attack Indicators</h2>
+        <ul class="capability-list">
+            <li>Anomalous sign-in locations or times</li>
+            <li>Impossible travel scenarios</li>
+            <li>Unusual application access patterns</li>
+            <li>High-volume data download activities</li>
+            <li>Token usage from unregistered devices</li>
+        </ul>
+    </div>
+
+    <!-- Microsoft Licensing Approach -->
+    <div class="section page-break">
+        <h1>3. 🏆 Microsoft Licensing Approach: Good, Better, Best</h1>
+        
+        <p>Microsoft's tiered licensing approach allows organizations to progressively enhance their token theft protection capabilities based on their risk profile, budget, and security maturity.</p>
+        
+        <h2>Licensing Progression Strategy</h2>
+        
+        <div class="technical-box">
+            <h3>🎯 Strategic Approach</h3>
+            <p>Each tier builds upon the previous one, ensuring that organizations can:</p>
+            <ul>
+                <li>Start with foundational protection (P1)</li>
+                <li>Add intelligent detection (P2)</li>
+                <li>Complete with automated response (E5)</li>
+            </ul>
+        </div>
+        
+        <h2>Tier Comparison Overview</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Capability</th>
+                    <th>Entra ID P1</th>
+                    <th>Entra ID P2</th>
+                    <th>Microsoft 365 E5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Token Protection Policies</td>
+                    <td>✅ Basic</td>
+                    <td>✅ Basic</td>
+                    <td>✅ Advanced</td>
+                </tr>
+                <tr>
+                    <td>Risk-based Conditional Access</td>
+                    <td>❌ Not Available</td>
+                    <td>✅ Full Support</td>
+                    <td>✅ Full Support</td>
+                </tr>
+                <tr>
+                    <td>Identity Protection</td>
+                    <td>⚠️ Limited</td>
+                    <td>✅ Complete</td>
+                    <td>✅ Complete</td>
+                </tr>
+                <tr>
+                    <td>Threat Detection (XDR)</td>
+                    <td>❌ Not Available</td>
+                    <td>❌ Not Available</td>
+                    <td>✅ Complete Stack</td>
+                </tr>
+                <tr>
+                    <td>Automatic Remediation</td>
+                    <td>❌ Manual Only</td>
+                    <td>⚠️ Limited</td>
+                    <td>✅ Full Automation</td>
+                </tr>
+                <tr>
+                    <td>Response Time</td>
+                    <td>Hours to Days</td>
+                    <td>Minutes to Hours</td>
+                    <td>Seconds to Minutes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- GOOD: Entra ID P1 -->
+    <div class="section page-break">
+        <h1>4. ✅ GOOD: Entra ID P1 Foundation</h1>
+        
+        <div class="tier-box good">
+            <div class="tier-header">
+                <div class="tier-badge good">✅ GOOD</div>
+                <h3>Foundational Token Protection</h3>
+            </div>
+            
+            <p>Entra ID P1 provides the essential building blocks for token theft protection through conditional access policies and basic device management.</p>
+        </div>
+        
+        <h2>Core Capabilities</h2>
+        
+        <h3>🔐 Token Protection for Sign-in Sessions</h3>
+        <div class="technical-box">
+            <p><strong>Implementation:</strong> Cryptographically binds tokens to registered devices using Primary Refresh Tokens (PRTs)</p>
+            <p><strong>Protection:</strong> Prevents stolen tokens from being replayed on unauthorized devices</p>
+            <p><strong>Coverage:</strong> All Entra ID integrated applications</p>
+        </div>
+        
+        <h3>📱 App Protection Policies</h3>
+        <p>Critical defense mechanism that protects against token theft through:</p>
+        <ul class="capability-list">
+            <li>Isolating corporate data within secure app containers</li>
+            <li>Blocking screen capture to prevent token harvesting</li>
+            <li>Requiring PIN/biometric authentication for app access</li>
+            <li>Detecting and blocking access from jailbroken/rooted devices</li>
+            <li>Enforcing secure app versions with latest security patches</li>
+        </ul>
+        
+        <h3>🔧 Intune Integration Benefits</h3>
+        <div class="technical-box">
+            <p><strong>Device Compliance:</strong> Enforces device health requirements (OS version, encryption, antivirus) that Conditional Access evaluates</p>
+            <p><strong>App Management:</strong> Centralized deployment of app protection policies integrated with Conditional Access</p>
+            <p><strong>Security Configuration:</strong> Automatic deployment of security settings that harden devices against malware</p>
+        </div>
+        
+        <h2>End User Experience</h2>
+        
+        <div class="timeline">
+            <div class="timeline-step">
+                <span class="time">Day 1</span>
+                <span class="action">One-time device enrollment (5-10 minutes)</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">Day 1</span>
+                <span class="action">Company Portal app installation and setup</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">Daily</span>
+                <span class="action">Transparent single sign-on with occasional app PIN prompts</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">Ongoing</span>
+                <span class="action">Automatic background compliance verification</span>
+            </div>
+        </div>
+        
+        <div class="technical-box">
+            <p><strong>User Impact:</strong> Minimal friction after initial setup. Users experience secure, seamless access with occasional additional authentication prompts for sensitive actions.</p>
+        </div>
+    </div>
+
+    <!-- BETTER: Entra ID P2 -->
+    <div class="section page-break">
+        <h1>5. ⭐ BETTER: Entra ID P2 Advanced Protection</h1>
+        
+        <div class="tier-box better">
+            <div class="tier-header">
+                <div class="tier-badge better">⭐ BETTER</div>
+                <h3>Intelligent Risk Detection & Response</h3>
+            </div>
+            
+            <p>Entra ID P2 adds sophisticated AI-powered risk detection and automated response capabilities to the P1 foundation.</p>
+        </div>
+        
+        <h2>Advanced Capabilities Added to P1</h2>
+        
+        <h3>🕵️ Identity Protection & Risk Detection</h3>
+        <div class="technical-box">
+            <p><strong>Real-time Analysis:</strong> Continuous monitoring with 99% precision in anomalous token detection</p>
+            <p><strong>Detection Types:</strong></p>
+            <ul>
+                <li>Attacker-in-the-Middle (AiTM) attacks</li>
+                <li>Unfamiliar sign-in properties</li>
+                <li>Impossible travel scenarios</li>
+                <li>Anonymous IP usage</li>
+                <li>Malware-linked IP addresses</li>
+            </ul>
+        </div>
+        
+        <h3>🤖 Risk-Based Conditional Access</h3>
+        <p>Automated policy enforcement based on calculated risk levels:</p>
+        <ul class="capability-list">
+            <li>Block high-risk sign-ins automatically</li>
+            <li>Require additional MFA for medium-risk sessions</li>
+            <li>Force password reset for compromised users</li>
+            <li>Terminate active sessions when risk escalates</li>
+        </ul>
+        
+        <h3>⚡ Continuous Access Evaluation (CAE)</h3>
+        <div class="technical-box">
+            <p><strong>Real-time Token Management:</strong> Instant response to risk changes</p>
+            <ul>
+                <li>Immediate token revocation on risk elevation</li>
+                <li>Network location enforcement</li>
+                <li>User status change propagation</li>
+                <li>Enhanced session protection for CAE-aware applications</li>
+            </ul>
+        </div>
+        
+        <h2>P1 vs P2 License Comparison</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Entra ID P1</th>
+                    <th>Entra ID P2</th>
+                    <th>Token Protection Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Risk-based Policies</td>
+                    <td>❌ Not Available</td>
+                    <td>✅ Full Support</td>
+                    <td>High - Automated response</td>
+                </tr>
+                <tr>
+                    <td>Identity Protection Reports</td>
+                    <td>⚠️ Limited Access</td>
+                    <td>✅ Complete Access</td>
+                    <td>Medium - Better visibility</td>
+                </tr>
+                <tr>
+                    <td>Risk Detection Catalog</td>
+                    <td>❌ No Details</td>
+                    <td>✅ Full Catalog</td>
+                    <td>High - Precise identification</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Graph API</td>
+                    <td>❌ No Risk Data</td>
+                    <td>✅ Full Risk API</td>
+                    <td>Medium - SIEM integration</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>User Experience Scenarios</h2>
+        
+        <div class="technical-box">
+            <p><strong>🟢 Normal Operations:</strong> Completely transparent. Single sign-on with background risk assessment.</p>
+            <p><strong>🟡 Medium Risk:</strong> Additional MFA prompt with brief explanation (30-second resolution).</p>
+            <p><strong>🔴 High Risk:</strong> Temporary access block with clear instructions and automatic IT notification.</p>
+        </div>
+    </div>
+
+    <!-- BEST: Microsoft 365 E5 -->
+    <div class="section page-break">
+        <h1>6. 🏆 BEST: Microsoft 365 E5 Complete Solution</h1>
+        
+        <div class="tier-box best">
+            <div class="tier-header">
+                <div class="tier-badge best">🏆 BEST</div>
+                <h3>Ultimate Token Theft Protection</h3>
+            </div>
+            
+            <p>Microsoft 365 E5 provides comprehensive protection through integrated threat detection, automatic remediation, and complete security across the entire attack surface.</p>
+        </div>
+        
+        <h2>Complete Protection Stack</h2>
+        
+        <h3>🛡️ Microsoft Defender XDR Integration</h3>
+        <ul class="capability-list">
+            <li><strong>Defender for Endpoint:</strong> Malware-based token extraction detection on devices</li>
+            <li><strong>Defender for Office 365:</strong> Phishing email detection and automatic quarantine</li>
+            <li><strong>Defender for Cloud Apps:</strong> Anomalous app behavior and AiTM detection</li>
+            <li><strong>Defender for Identity:</strong> On-premises Active Directory attack detection</li>
+        </ul>
+        
+        <h3>🤖 Automatic Attack Disruption</h3>
+        <div class="technical-box">
+            <p><strong>Coordinated Response Capabilities:</strong></p>
+            <ul>
+                <li>Real-time token revocation across all applications</li>
+                <li>Automatic device isolation and containment</li>
+                <li>Email threat removal and URL blocking</li>
+                <li>User account protection and session termination</li>
+                <li>Automatic investigation and evidence collection</li>
+            </ul>
+        </div>
+        
+        <h3>🔒 Enhanced Token Protection Features</h3>
+        <ul class="capability-list">
+            <li>Hardware-bound token protection with TPM integration</li>
+            <li>Passwordless authentication using FIDO2 keys</li>
+            <li>Certificate-based authentication for high-security scenarios</li>
+            <li>Advanced session management with enhanced CAE</li>
+        </ul>
+        
+        <h2>E5-Specific Benefits</h2>
+        
+        <div class="technical-box">
+            <p><strong>⚡ Sub-60 Second Response:</strong> From attack detection to full remediation in under 60 seconds</p>
+            <p><strong>🔍 99% AiTM Detection Precision:</strong> Industry-leading accuracy with minimal false positives</p>
+            <p><strong>🛠️ Zero-Touch Remediation:</strong> Automatic threat containment without SOC intervention</p>
+            <p><strong>🌐 Cross-Platform Protection:</strong> Unified protection across Windows, macOS, iOS, Android</p>
+        </div>
+        
+        <h2>Real-World Attack Response</h2>
+        
+        <h3>📧 Phishing Attack Scenario</h3>
+        <div class="timeline">
+            <div class="timeline-step">
+                <span class="time">T+0s</span>
+                <span class="action">User clicks malicious link - Defender for Office 365 blocks URL immediately</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">T+5s</span>
+                <span class="action">Warning message displayed: "This link was blocked for your protection"</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">T+10s</span>
+                <span class="action">User continues normal work - threat eliminated transparently</span>
+            </div>
+        </div>
+        
+        <h3>🔐 Token Theft Attempt</h3>
+        <div class="timeline">
+            <div class="timeline-step">
+                <span class="time">T+0s</span>
+                <span class="action">Malware attempts token extraction - Defender for Endpoint detects suspicious process</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">T+15s</span>
+                <span class="action">All user tokens automatically revoked, device quarantined</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">T+30s</span>
+                <span class="action">User notification: "Security threat detected and resolved"</span>
+            </div>
+            <div class="timeline-step">
+                <span class="time">T+5m</span>
+                <span class="action">After device cleanup, user re-authenticates and resumes work</span>
+            </div>
+        </div>
+        
+        <div class="technical-box">
+            <p><strong>Daily Impact:</strong> Users experience faster, more secure access with passwordless authentication options. Security incidents are resolved automatically with minimal disruption to productivity.</p>
+        </div>
+    </div>
+
+    <!-- Implementation Roadmap -->
+    <div class="section page-break">
+        <h1>7. 🚀 Implementation Roadmap</h1>
+        
+        <h2>Recommended Progression Path</h2>
+        
+        <div class="tier-box good no-break">
+            <h3>Phase 1: Start with Entra ID P1 (Months 1-3)</h3>
+            <ul class="capability-list">
+                <li>Deploy basic conditional access policies</li>
+                <li>Implement token protection for sign-in sessions</li>
+                <li>Configure app protection policies</li>
+                <li>Establish device compliance requirements</li>
+                <li>Train users on new security requirements</li>
+            </ul>
+        </div>
+        
+        <div class="tier-box better no-break">
+            <h3>Phase 2: Enhance with Entra ID P2 (Months 4-6)</h3>
+            <ul class="capability-list">
+                <li>Enable Identity Protection and risk detection</li>
+                <li>Configure risk-based conditional access policies</li>
+                <li>Implement Continuous Access Evaluation</li>
+                <li>Establish automated response procedures</li>
+                <li>Integrate with SIEM solutions via Microsoft Graph API</li>
+            </ul>
+        </div>
+        
+        <div class="tier-box best no-break">
+            <h3>Phase 3: Complete with Microsoft 365 E5 (Months 7-12)</h3>
+            <ul class="capability-list">
+                <li>Deploy Microsoft Defender XDR across all workloads</li>
+                <li>Configure automatic attack disruption</li>
+                <li>Implement zero-touch remediation workflows</li>
+                <li>Enable advanced threat hunting capabilities</li>
+                <li>Establish comprehensive security monitoring</li>
+            </ul>
+        </div>
+        
+        <h2>💡 Key Success Factors</h2>
+        <ul class="capability-list">
+            <li><strong>Gradual Rollout:</strong> Phase implementation to minimize user disruption</li>
+            <li><strong>User Training:</strong> Ensure clear communication about security enhancements</li>
+            <li><strong>Monitoring:</strong> Track effectiveness and adjust policies based on results</li>
+            <li><strong>Integration:</strong> Leverage existing Microsoft investments for maximum ROI</li>
+        </ul>
+    </div>
+
+    <!-- References -->
+    <div class="section page-break">
+        <h1>8. 📚 References and Resources</h1>
+        
+        <h2>Microsoft Official Documentation</h2>
+        <ul>
+            <li><a href="https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection#license-requirements" class="reference-link">Entra ID Protection License Requirements</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/entra/identity/devices/protecting-tokens-microsoft-entra-id" class="reference-link">Protecting Tokens in Microsoft Entra</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-approved-app-or-app-protection" class="reference-link">App Protection Policies Documentation</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/" class="reference-link">Microsoft Defender XDR Documentation</a></li>
+        </ul>
+        
+        <h2>Additional Resources</h2>
+        <ul>
+            <li>Microsoft Security Blog: Token Theft Attack Trends</li>
+            <li>Entra ID Protection Best Practices Guide</li>
+            <li>Microsoft 365 E5 Security Deployment Guide</li>
+            <li>Conditional Access Policy Templates</li>
+        </ul>
+        
+        <h2>Support and Training</h2>
+        <ul>
+            <li>Microsoft Learn: Identity and Access Management Learning Path</li>
+            <li>Microsoft Security Community</li>
+            <li>FastTrack for Microsoft 365 Deployment Assistance</li>
+            <li>Microsoft Partner Network Security Specialists</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        <p>This document is provided for informational purposes only. Microsoft makes no warranties regarding the information contained herein.</p>
+        <p><strong>Generated:</strong> October 2025 | <strong>Version:</strong> 2.0</p>
+    </div>
+</body>
+</html>
