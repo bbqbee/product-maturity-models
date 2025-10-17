@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zscaler Integration with Microsoft Defender for Cloud Apps - SSPM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft SSPM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">SaaS Risks</a></li>
+                <li><a href="solution.html">SSPM Overview</a></li>
+                <li><a href="implementation.html">Microsoft Defender</a></li>
+                <li><a href="comparison.html">ME3 vs ME5</a></li>
+                <li><a href="zscaler.html" class="active">Zscaler Integration</a></li>
+                <li><a href="remediation.html">Automation & SOAR</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>🔗 Zscaler Integration</h1>
+                <p class="page-subtitle">Connect Zscaler with Microsoft Defender for Cloud Apps for Enhanced SSPM</p>
+            </div>
+        </section>
+
+        <section class="integration-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <h2>Integration Overview</h2>
+                    <p>Microsoft Defender for Cloud Apps integrates with Zscaler to provide comprehensive SaaS Security Posture Management (SSPM) by combining Microsoft's cloud app governance with Zscaler's secure web gateway capabilities.</p>
+                    
+                    <div class="integration-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🛡️</div>
+                            <h3>Enhanced Visibility</h3>
+                            <p>Gain deeper insights into SaaS usage by combining Defender for Cloud Apps discovery with Zscaler traffic logs</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📊</div>
+                            <h3>Unified Reporting</h3>
+                            <p>Centralized dashboard showing both sanctioned and shadow IT applications across your environment</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🔧</div>
+                            <h3>Automated Governance</h3>
+                            <p>Apply consistent SSPM policies across all SaaS applications discovered through both platforms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prerequisites">
+            <div class="container">
+                <h2>📋 Prerequisites</h2>
+                <div class="prereq-content">
+                    <div class="prereq-section">
+                        <h3>Microsoft Requirements</h3>
+                        <ul>
+                            <li>Microsoft Defender for Cloud Apps license</li>
+                            <li>Global Administrator or Security Administrator permissions</li>
+                            <li>Active Microsoft 365 or Azure AD tenant</li>
+                        </ul>
+                    </div>
+                    <div class="prereq-section">
+                        <h3>Zscaler Requirements</h3>
+                        <ul>
+                            <li>Zscaler Internet Access (ZIA) subscription</li>
+                            <li>Zscaler administrator access</li>
+                            <li>NSS (Nanolog Streaming Service) enabled</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="configuration-steps">
+            <div class="container">
+                <h2>⚙️ Configuration Steps</h2>
+                <div class="steps-timeline">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Configure Zscaler NSS</h3>
+                            <p>Set up Nanolog Streaming Service in Zscaler to send web logs to Microsoft Defender for Cloud Apps</p>
+                            <div class="step-details">
+                                <ul>
+                                    <li>Navigate to Zscaler Admin Portal → Administration → Nanolog Streaming Service</li>
+                                    <li>Add new NSS feed with Microsoft Cloud App Security endpoint</li>
+                                    <li>Configure log format to include required fields for SSPM analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Enable Log Collection in Defender</h3>
+                            <p>Configure Microsoft Defender for Cloud Apps to receive and process Zscaler logs</p>
+                            <div class="step-details">
+                                <ul>
+                                    <li>Go to Microsoft Defender Portal → Cloud Apps → Settings → Log collectors</li>
+                                    <li>Create new automatic log upload for Zscaler</li>
+                                    <li>Verify log parsing and application discovery is working</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Configure App Discovery</h3>
+                            <p>Set up continuous app discovery to identify all SaaS applications in use</p>
+                            <div class="step-details">
+                                <ul>
+                                    <li>Enable continuous reports in Cloud Discovery dashboard</li>
+                                    <li>Configure user group mapping for organizational units</li>
+                                    <li>Set up automated app risk scoring based on usage patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Apply SSPM Policies</h3>
+                            <p>Create and enforce SaaS Security Posture Management policies across discovered applications</p>
+                            <div class="step-details">
+                                <ul>
+                                    <li>Define app categories (Sanctioned, Unsanctioned, Monitored)</li>
+                                    <li>Create governance policies for file sharing and access controls</li>
+                                    <li>Set up alerts for policy violations and risky app usage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <div class="container">
+                <h2>🎯 SSMP Use Cases</h2>
+                <div class="use-case-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🔍</div>
+                        <h3>Shadow IT Discovery</h3>
+                        <p>Automatically discover all SaaS applications being used across your organization, including those bypassing traditional security controls</p>
+                    </div>
+                    
+                    <div class="use-case-card">
+                        <div class="use-case-icon">📊</div>
+                        <h3>Risk Assessment</h3>
+                        <p>Evaluate the security posture of discovered SaaS applications using Microsoft's cloud app catalog and risk scoring</p>
+                    </div>
+                    
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🛡️</div>
+                        <h3>Data Protection</h3>
+                        <p>Apply DLP policies and access controls to protect sensitive data across all sanctioned SaaS applications</p>
+                    </div>
+                    
+                    <div class="use-case-card">
+                        <div class="use-case-icon">⚖️</div>
+                        <h3>Compliance Monitoring</h3>
+                        <p>Ensure SaaS applications meet your organization's compliance requirements and regulatory standards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-practices">
+            <div class="container">
+                <h2>✅ Best Practices</h2>
+                <div class="practices-content">
+                    <div class="practice-category">
+                        <h3>🔧 Configuration Best Practices</h3>
+                        <ul>
+                            <li>Enable NSS for all relevant Zscaler locations and user groups</li>
+                            <li>Configure log retention to meet your organization's compliance requirements</li>
+                            <li>Set up regular monitoring of log ingestion to ensure continuous data flow</li>
+                            <li>Implement app tagging for better organization and policy management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="practice-category">
+                        <h3>📈 Operational Best Practices</h3>
+                        <ul>
+                            <li>Regularly review and update app risk scores based on new security assessments</li>
+                            <li>Establish clear governance workflows for app approval and sanctioning</li>
+                            <li>Monitor policy effectiveness and adjust rules based on user behavior</li>
+                            <li>Provide user education on approved SaaS applications and security policies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="troubleshooting">
+            <div class="container">
+                <h2>🔧 Troubleshooting</h2>
+                <div class="troubleshooting-content">
+                    <div class="issue-item">
+                        <h3>Log Ingestion Issues</h3>
+                        <p><strong>Problem:</strong> Zscaler logs not appearing in Defender for Cloud Apps</p>
+                        <p><strong>Solution:</strong> Verify NSS configuration, check firewall rules, and ensure proper authentication</p>
+                    </div>
+                    
+                    <div class="issue-item">
+                        <h3>App Discovery Not Working</h3>
+                        <p><strong>Problem:</strong> Applications not being discovered or categorized properly</p>
+                        <p><strong>Solution:</strong> Review log format configuration and ensure all required fields are included</p>
+                    </div>
+                    
+                    <div class="issue-item">
+                        <h3>Policy Enforcement Delays</h3>
+                        <p><strong>Problem:</strong> SSPM policies not being applied in real-time</p>
+                        <p><strong>Solution:</strong> Check policy configuration and consider adjusting sync intervals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Implement Zscaler Integration?</h2>
+                    <p>Follow the official Microsoft documentation and configure Zscaler integration to enhance your SSPM capabilities with comprehensive SaaS application visibility and governance.</p>
+                    <div class="cta-buttons">
+                        <a href="implementation.html" class="cta-button">Return to Implementation Guide →</a>
+                        <a href="https://learn.microsoft.com/en-us/defender-cloud-apps/zscaler-integration" class="cta-button secondary" target="_blank">View Official Documentation →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+            <p>SSPM: SaaS Security Posture Management Solutions</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
