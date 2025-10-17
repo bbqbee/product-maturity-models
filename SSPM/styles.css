@@ -375,11 +375,13 @@ section {
 .problem-description h3,
 .risk-scenario .problem-description h3,
 .scenario-card .problem-description h3 {
-    color: #ffffff !important;
+    color: #d32f2f !important;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 .solution-preview h3 {
@@ -466,10 +468,70 @@ section {
 }
 
 .next-steps {
-    background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
-    color: white;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e1dfdd 100%);
     text-align: center;
     padding: 4rem 0;
+}
+
+.next-steps .cta-section {
+    background: transparent;
+}
+
+.next-steps h2,
+.next-steps .cta-section h2 {
+    color: #323130 !important;
+    margin-bottom: 1rem !important;
+    font-size: 2rem !important;
+}
+
+.next-steps p,
+.next-steps .cta-section p {
+    color: #605e5c !important;
+    margin-bottom: 2rem !important;
+    font-size: 1.1rem !important;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Force dark text for all next-steps content */
+.next-steps * {
+    color: inherit !important;
+}
+
+.next-steps h2 {
+    color: #323130 !important;
+}
+
+.next-steps p {
+    color: #605e5c !important;
+}
+
+/* Ultra-specific targeting for solution.html and other pages */
+section.next-steps h2,
+section.next-steps .container h2,
+section.next-steps .cta-section h2,
+section.next-steps .container .cta-section h2 {
+    color: #323130 !important;
+    font-weight: 600 !important;
+}
+
+section.next-steps p,
+section.next-steps .container p,
+section.next-steps .cta-section p,
+section.next-steps .container .cta-section p {
+    color: #605e5c !important;
+}
+
+/* Remove any white text inheritance */
+.next-steps,
+.next-steps * {
+    color: #323130 !important;
+}
+
+.next-steps p,
+.next-steps .cta-section p {
+    color: #605e5c !important;
 }
 
 /* SSPM Capability Cards */
@@ -4357,7 +4419,6 @@ footer p {
 .scenario-card h3,
 .scenario-card h4,
 .problem-description h2,
-.problem-description h3,
 .problem-description h4,
 .attack-step h2,
 .attack-step h3,
@@ -4366,6 +4427,14 @@ footer p {
 .attack-flow h3,
 .attack-flow h4 {
     color: #ffffff !important;
+}
+
+/* Make "The Problem" headers darker and visible */
+.problem-description h3 {
+    color: #d32f2f !important;
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+    margin-bottom: 1rem !important;
 }
 
 /* Optional section styling for remediation page */
