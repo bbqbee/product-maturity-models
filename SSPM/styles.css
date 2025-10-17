@@ -297,6 +297,11 @@ section {
     text-align: center;
 }
 
+.getting-started .cta-section h2,
+.getting-started .cta-section p {
+    color: black !important;
+}
+
 .cta-section h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
