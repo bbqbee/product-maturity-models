@@ -4476,3 +4476,98 @@ footer p {
     line-height: 1.7;
     color: #555;
 }
+
+/* Zscaler page specific styling - Override existing styles */
+.configuration-steps .integration-overview,
+.integration-overview {
+    text-align: center !important;
+    padding: 3rem 0;
+}
+
+.configuration-steps .integration-overview h2,
+.integration-overview h2 {
+    margin-bottom: 1.5rem !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+}
+
+.configuration-steps .integration-overview .overview-content p,
+.integration-overview .overview-content p {
+    max-width: 800px !important;
+    margin: 0 auto 3rem auto !important;
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+    color: #555 !important;
+    text-align: center !important;
+}
+
+.configuration-steps .steps-timeline,
+.steps-timeline {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    margin-top: 2rem !important;
+}
+
+.configuration-steps .step-item,
+.steps-timeline .step-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+    padding: 2rem !important;
+    background: white !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    text-align: left !important;
+}
+
+.configuration-steps .step-number,
+.steps-timeline .step-number {
+    flex-shrink: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: linear-gradient(135deg, #0078d4, #106ebe) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+}
+
+.configuration-steps .step-content,
+.steps-timeline .step-content {
+    flex: 1 !important;
+    text-align: left !important;
+}
+
+.configuration-steps .step-content h3,
+.steps-timeline .step-content h3 {
+    margin: 0 0 1rem 0 !important;
+    color: #2c3e50 !important;
+    text-align: left !important;
+}
+
+.configuration-steps .step-content p,
+.steps-timeline .step-content p {
+    margin: 0 0 1rem 0 !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+}
+
+.configuration-steps .step-details ul,
+.steps-timeline .step-details ul {
+    margin: 0 !important;
+    padding-left: 1.5rem !important;
+    text-align: left !important;
+}
+
+.configuration-steps .step-details li,
+.steps-timeline .step-details li {
+    margin-bottom: 0.5rem !important;
+    color: #666 !important;
+    text-align: left !important;
+}

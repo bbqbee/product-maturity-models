@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSPM Policy Management - Microsoft Defender for Cloud Apps</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft SSPM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">SaaS Risks</a></li>
+                <li><a href="solution.html">SSPM Overview</a></li>
+                <li><a href="implementation.html">Microsoft Defender</a></li>
+                <li><a href="comparison.html">ME3 vs ME5</a></li>
+                <li><a href="policy-management.html" class="active">Policy Management</a></li>
+                <li><a href="remediation.html">Automation & SOAR</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>📋 SSPM Policy Management</h1>
+                <p class="page-subtitle">Control and Govern Cloud Apps with Microsoft Defender Policies</p>
+            </div>
+        </section>
+
+        <section class="policy-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <h2>Comprehensive SaaS Governance</h2>
+                    <p>Microsoft Defender for Cloud Apps provides a robust policy framework for SaaS Security Posture Management (SSPM), enabling organizations to discover, assess, and govern cloud applications with automated policy enforcement and real-time protection.</p>
+                    
+                    <div class="policy-types-grid">
+                        <div class="policy-type-card">
+                            <div class="policy-icon">🔍</div>
+                            <h3>Discovery Policies</h3>
+                            <p>Automatically detect and catalog all SaaS applications in use across your organization</p>
+                        </div>
+                        <div class="policy-type-card">
+                            <div class="policy-icon">🛡️</div>
+                            <h3>Access Policies</h3>
+                            <p>Control user access to cloud applications with real-time session monitoring</p>
+                        </div>
+                        <div class="policy-type-card">
+                            <div class="policy-icon">📁</div>
+                            <h3>File Policies</h3>
+                            <p>Protect sensitive data across SaaS platforms with DLP and governance rules</p>
+                        </div>
+                        <div class="policy-type-card">
+                            <div class="policy-icon">⚠️</div>
+                            <h3>Anomaly Policies</h3>
+                            <p>Detect unusual user behavior and potential security threats using machine learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="policy-categories">
+            <div class="container">
+                <h2>🎯 Core Policy Categories</h2>
+                
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>🔍 Cloud Discovery Policies</h3>
+                        <p>Identify and assess all cloud applications being used in your organization</p>
+                    </div>
+                    <div class="policy-details">
+                        <div class="policy-item">
+                            <h4>Shadow IT Detection</h4>
+                            <p>Automatically discover unsanctioned cloud applications and assess their risk levels based on compliance, security features, and usage patterns.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">📊 Risk Scoring</span>
+                                <span class="action-tag">🏷️ App Tagging</span>
+                                <span class="action-tag">📧 Notifications</span>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <h4>Usage Monitoring</h4>
+                            <p>Track application usage patterns, data volume, and user behavior to identify compliance and security risks.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">📈 Usage Analytics</span>
+                                <span class="action-tag">👥 User Mapping</span>
+                                <span class="action-tag">🔔 Threshold Alerts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>🛡️ Access Control Policies</h3>
+                        <p>Enforce real-time access controls and session management</p>
+                    </div>
+                    <div class="policy-details">
+                        <div class="policy-item">
+                            <h4>Conditional Access</h4>
+                            <p>Apply granular access controls based on user, device, location, and application risk factors with integration to Azure AD Conditional Access.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">🔐 Block Access</span>
+                                <span class="action-tag">⚠️ Require MFA</span>
+                                <span class="action-tag">📱 Device Controls</span>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <h4>Session Control</h4>
+                            <p>Monitor and control user sessions in real-time with capabilities to block, protect, or monitor specific activities within sanctioned applications.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">👁️ Monitor Sessions</span>
+                                <span class="action-tag">🚫 Block Downloads</span>
+                                <span class="action-tag">🔒 Protect Files</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>📁 Data Protection Policies</h3>
+                        <p>Secure sensitive information across all SaaS applications</p>
+                    </div>
+                    <div class="policy-details">
+                        <div class="policy-item">
+                            <h4>File Governance</h4>
+                            <p>Automatically classify, label, and protect files based on content, sensitivity, and compliance requirements across connected SaaS platforms.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">🏷️ Auto-Label</span>
+                                <span class="action-tag">🔒 Apply Protection</span>
+                                <span class="action-tag">🗑️ Quarantine Files</span>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <h4>DLP Integration</h4>
+                            <p>Leverage Microsoft Purview DLP policies to prevent data loss and ensure compliance across all connected cloud applications.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">🔍 Content Inspection</span>
+                                <span class="action-tag">🚫 Block Sharing</span>
+                                <span class="action-tag">📧 Admin Alerts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <div class="category-header">
+                        <h3>⚠️ Threat Detection Policies</h3>
+                        <p>Identify and respond to security threats using behavioral analytics</p>
+                    </div>
+                    <div class="policy-details">
+                        <div class="policy-item">
+                            <h4>Anomaly Detection</h4>
+                            <p>Use machine learning to identify unusual user behavior patterns that may indicate compromised accounts or insider threats.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">🤖 ML Analysis</span>
+                                <span class="action-tag">🔔 Risk Alerts</span>
+                                <span class="action-tag">🔒 Auto-Suspend</span>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <h4>Malware Detection</h4>
+                            <p>Automatically scan files uploaded to connected cloud applications for malware and malicious content using Microsoft Defender intelligence.</p>
+                            <div class="policy-actions">
+                                <span class="action-tag">🦠 Malware Scan</span>
+                                <span class="action-tag">🗑️ Quarantine</span>
+                                <span class="action-tag">📧 Incident Alert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="policy-implementation">
+            <div class="container">
+                <h2>⚙️ Policy Implementation Guide</h2>
+                <div class="implementation-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Assessment & Planning</h3>
+                            <p>Evaluate your current SaaS usage and identify policy requirements</p>
+                            <ul>
+                                <li>Run Cloud Discovery to identify all applications</li>
+                                <li>Assess current data governance gaps</li>
+                                <li>Define policy priorities and compliance requirements</li>
+                                <li>Map organizational units to policy scopes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Policy Design</h3>
+                            <p>Create comprehensive policy framework aligned with business needs</p>
+                            <ul>
+                                <li>Design discovery policies for shadow IT detection</li>
+                                <li>Configure access control policies with appropriate actions</li>
+                                <li>Set up file policies for data protection and DLP</li>
+                                <li>Enable anomaly detection for threat prevention</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Deployment & Testing</h3>
+                            <p>Implement policies in controlled phases with monitoring</p>
+                            <ul>
+                                <li>Start with monitor-only mode for policy testing</li>
+                                <li>Deploy to pilot groups first</li>
+                                <li>Validate policy effectiveness and adjust thresholds</li>
+                                <li>Test incident response workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Monitoring & Optimization</h3>
+                            <p>Continuously improve policies based on insights and threats</p>
+                            <ul>
+                                <li>Review policy alerts and adjust sensitivity</li>
+                                <li>Analyze policy effectiveness metrics</li>
+                                <li>Update policies for new applications and threats</li>
+                                <li>Provide user training on policy compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-practices">
+            <div class="container">
+                <h2>💡 SSPM Policy Best Practices</h2>
+                <div class="practices-grid">
+                    <div class="practice-card">
+                        <div class="practice-icon">🎯</div>
+                        <h3>Start with Discovery</h3>
+                        <p>Begin your SSPM journey with comprehensive cloud discovery to understand your current SaaS landscape before implementing governance policies.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">⚖️</div>
+                        <h3>Balance Security & Usability</h3>
+                        <p>Design policies that protect your organization while maintaining user productivity. Use monitor mode before enforcement.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">🔄</div>
+                        <h3>Implement Gradually</h3>
+                        <p>Roll out policies in phases, starting with critical applications and high-risk scenarios before expanding to the entire organization.</p>
+                    </div>
+                    <div class="practice-card">
+                        <div class="practice-icon">📊</div>
+                        <h3>Monitor & Measure</h3>
+                        <p>Regularly review policy effectiveness using Defender for Cloud Apps analytics and adjust rules based on real-world usage patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Implement SSPM Policies?</h2>
+                    <p>Start building comprehensive SaaS governance with Microsoft Defender for Cloud Apps policy management. Follow our implementation guide and best practices for successful SSPM deployment.</p>
+                    <div class="cta-buttons">
+                        <a href="implementation.html" class="cta-button">View Implementation Guide →</a>
+                        <a href="https://learn.microsoft.com/en-us/defender-cloud-apps/control-cloud-apps-with-policies" class="cta-button secondary" target="_blank">Official Policy Documentation →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+            <p>SSPM: SaaS Security Posture Management Solutions</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
