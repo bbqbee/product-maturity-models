@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSPM Overview: What It Must Do - Microsoft Security</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="shield-icon">🛡️</span>
+                <span>Microsoft SSPM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">SaaS Risks</a></li>
+                <li><a href="solution.html" class="active">SSPM Overview</a></li>
+                <li><a href="implementation.html">Microsoft Defender</a></li>
+                <li><a href="comparison.html">ME3 vs ME5</a></li>
+                <li><a href="entra-suite.html">Zscaler Integration</a></li>
+                <li><a href="remediation.html">Automation & SOAR</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>🛡️ What SSPM Must Do</h1>
+                <p class="page-subtitle">Seven Essential Capabilities for SaaS Security</p>
+            </div>
+        </section>
+
+        <section class="solution-overview">
+            <div class="container">
+                <div class="solution-intro">
+                    <h2>Comprehensive SSPM Program Requirements</h2>
+                    <p>A comprehensive SSPM program and toolset must deliver seven essential capabilities that directly address the SaaS security risks we identified. Each capability targets specific risk scenarios:</p>
+                </div>
+                
+                <!-- Capability 1: Discovery & Inventory -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">1</div>
+                        <div class="capability-title">
+                            <h3>🔍 Discovery & Inventory</h3>
+                            <p class="addresses">Addresses: Shadow SaaS & App Sprawl</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p><strong>Discovery of SaaS usage and connected apps</strong> via logs, API connectors, and identity telemetry with risk rating of applications.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Eliminates blind spots in your SaaS estate, providing visibility into unauthorized applications before they become security incidents.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capability 2: Configuration Assessment -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">2</div>
+                        <div class="capability-title">
+                            <h3>⚙️ API-Based Configuration Assessments</h3>
+                            <p class="addresses">Addresses: Misconfiguration & Drift</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p><strong>Continuous configuration assessments</strong> for major SaaS platforms with benchmarks and actionable recommendations, appearing in Security Exposure Management and Secure Score.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Prevents security incidents by identifying and correcting misconfigurations before attackers can exploit them.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capability 3: OAuth Governance -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">3</div>
+                        <div class="capability-title">
+                            <h3>🔗 OAuth Governance & Attack Path Awareness</h3>
+                            <p class="addresses">Addresses: Supply Chain & Lateral Movement</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p>Surfaces <strong>high-privilege OAuth apps</strong> and shows how they can be used in lateral movement, including them in exposure and attack-path analytics.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Prevents supply chain attacks by identifying risky app integrations and their potential attack paths across your SaaS ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capability 4: Real-time Enforcement -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">4</div>
+                        <div class="capability-title">
+                            <h3>⚡ Real-Time Enforcement</h3>
+                            <p class="addresses">Addresses: Data Exfiltration & Policy Violations</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p><strong>Session controls, conditional access app control, DLP, and anomaly detection</strong> for sanctioned apps plus network-level enforcement to block unsanctioned apps.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Stops data exfiltration in real-time by enforcing consistent security policies across all SaaS applications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capability 5: Identity-Driven Controls -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">5</div>
+                        <div class="capability-title">
+                            <h3>👤 Identity-Driven Controls</h3>
+                            <p class="addresses">Addresses: Access Risk & Privilege Escalation</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p><strong>User/device risk assessment, CA policies, PIM, and access reviews</strong> to keep posture aligned with least privilege principles.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Reduces blast radius by ensuring users have only the minimum necessary access to SaaS applications and data.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capability 6: Automation & SOAR -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">6</div>
+                        <div class="capability-title">
+                            <h3>🤖 Automation & SOAR</h3>
+                            <p class="addresses">Addresses: Response Time & Scale</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p><strong>Continuous monitoring, alerting, and automated remediation</strong> including auto-block, auto-label, OAuth revocation, and session/device isolation.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Enables instant response to threats at scale, reducing mean time to remediation from hours to seconds.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capability 7: Unified Operations -->
+                <div class="capability-card">
+                    <div class="capability-header">
+                        <div class="capability-number">7</div>
+                        <div class="capability-title">
+                            <h3>🌐 Unified SecOps & Exposure Management</h3>
+                            <p class="addresses">Addresses: Fragmented Security Operations</p>
+                        </div>
+                    </div>
+                    <div class="capability-content">
+                        <div class="what-it-does">
+                            <h4>What it does:</h4>
+                            <p><strong>Unified portal and data model</strong> to prioritize SSPM findings alongside endpoint, identity, cloud, and external attack surface management.</p>
+                        </div>
+                        <div class="how-it-helps">
+                            <h4>How it helps:</h4>
+                            <p>Eliminates tool sprawl and context switching, enabling security teams to manage all risks from a single pane of glass.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Identity Integration Section -->
+        <section class="identity-integration">
+            <div class="container">
+                <h2>🎯 Identity-First SSPM Design</h2>
+                <div class="integration-overview">
+                    <p>An <strong>identity-first</strong> design aligns SSPM with Microsoft Entra for optimal security posture:</p>
+                    
+                    <div class="integration-features">
+                        <div class="integration-card">
+                            <div class="integration-icon">🔐</div>
+                            <h3>Risk-Based Conditional Access</h3>
+                            <p>Sign-in risk, user risk, and device compliance gate SaaS access and coordinate with MDCA session controls—unifying identity, device, and app posture.</p>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">⚡</div>
+                            <h3>Entra ID Protection (P2)</h3>
+                            <p>Privileged Identity Management (PIM) reduces blast radius with temporary elevation and step-up authentication for SaaS admins and OAuth consent flows.</p>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">📊</div>
+                            <h3>Exposure Management Integration</h3>
+                            <p>Cross-workload lens across devices, identities, SaaS, and cloud to quantify exposure, map attack paths, and drive security initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section class="next-steps">
+            <div class="container">
+                <div class="cta-section">
+                    <h2>Ready to Implement SSPM?</h2>
+                    <p>Now that you understand what SSPM must do, discover how Microsoft Defender for Cloud Apps delivers these capabilities through integrated security operations.</p>
+                    <div class="cta-buttons">
+                        <a href="implementation.html" class="cta-button primary">See Microsoft's Implementation →</a>
+                        <a href="comparison.html" class="cta-button">Compare ME3 vs ME5 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+                        <p>Defender for Endpoint + ASR + EDR</p>
+                    </div>
+                    <div class="fabric-layer">
+                        <h3>🌐 Cloud Layer</h3>
+                        <p>Defender for Cloud Apps + Identity</p>
+                    </div>
+                    <div class="fabric-center">
+                        <h3>🧠 XDR Intelligence</h3>
+                        <p>Unified threat detection and response</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>See Automated Protection in Action</h2>
+                    <p>Watch how Defender XDR automatically detects and remediates token theft attacks in real-time.</p>
+                    <div class="cta-buttons">
+                        <a href="remediation.html" class="cta-button">See Auto Remediation →</a>
+                        <a href="comparison.html" class="cta-button secondary">View Comparisons →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
