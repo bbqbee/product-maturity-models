@@ -359,8 +359,10 @@ section {
     font-size: 3rem;
 }
 
-.scenario-card h2 {
-    color: #d73502;
+.scenario-card h2,
+.risk-scenario .scenario-card h2,
+.scenario-card.alert h2 {
+    color: #ffffff !important;
     margin: 0;
     font-size: 1.8rem;
 }
@@ -370,8 +372,10 @@ section {
     margin: 2rem 0;
 }
 
-.problem-description h3 {
-    color: #d73502;
+.problem-description h3,
+.risk-scenario .problem-description h3,
+.scenario-card .problem-description h3 {
+    color: #ffffff !important;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -411,8 +415,10 @@ section {
     margin-bottom: 0.5rem;
 }
 
-.attack-step h4 {
-    color: #d73502;
+.attack-step h4,
+.attack-flow .attack-step h4,
+.problem-description .attack-step h4 {
+    color: #ffffff !important;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
@@ -425,7 +431,7 @@ section {
 
 .arrow {
     font-size: 2rem;
-    color: #d73502;
+    color: #ffffff;
     font-weight: bold;
     flex: 0 0 auto;
 }
@@ -4308,9 +4314,43 @@ footer p {
     .enhancement-grid,
     .protection-layers {
         grid-template-columns: 1fr;
-    }
-    
+
+/* FORCE WHITE HEADERS ON PROBLEM PAGE - FINAL OVERRIDE */
+.risk-scenario h2,
+.risk-scenario h3,
+.risk-scenario h4,
+.scenario-card h2,
+.scenario-card h3,
+.scenario-card h4,
+.problem-description h2,
+.problem-description h3,
+.problem-description h4,
+.attack-step h2,
+.attack-step h3,
+.attack-step h4 {
+    color: #ffffff !important;
+}
+
     .comparison-table-container {
         overflow-x: scroll;
     }
+}
+
+/* FINAL OVERRIDE FOR PROBLEM PAGE WHITE HEADERS */
+.risk-scenario h2,
+.risk-scenario h3, 
+.risk-scenario h4,
+.scenario-card h2,
+.scenario-card h3,
+.scenario-card h4,
+.problem-description h2,
+.problem-description h3,
+.problem-description h4,
+.attack-step h2,
+.attack-step h3,
+.attack-step h4,
+.attack-flow h2,
+.attack-flow h3,
+.attack-flow h4 {
+    color: #ffffff !important;
 }

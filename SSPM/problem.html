@@ -3,11 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS Security Risks: The Hidden Dangers - Microsoft SSPM</title>
+    <title>SaaS Security Risks: The Hidden Dangers - Microsoft SSPM (Updated)</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="problem-override.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ULTIMATE OVERRIDE - MAXIMUM SPECIFICITY */
+        .scenario-card h2 {
+            color: #ffffff !important;
+            margin: 0 !important;
+            font-size: 1.8rem !important;
+        }
+        
+        .problem-description h3 {
+            color: #ffffff !important;
+        }
+        
+        .attack-step h4 {
+            color: #ffffff !important;
+        }
+        
+        .arrow {
+            color: #ffffff !important;
+        }
+        
+        /* Keep solution headers green */
+        .solution-preview h3 {
+            color: #107c10 !important;
+        }
+    </style>
+    <script>
+        // Force white colors after page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Override scenario card headers
+            const scenarioHeaders = document.querySelectorAll('.scenario-card h2, .problem-description h3, .attack-step h4');
+            scenarioHeaders.forEach(header => {
+                header.style.color = '#ffffff';
+                header.style.setProperty('color', '#ffffff', 'important');
+            });
+            
+            // Override arrows
+            const arrows = document.querySelectorAll('.arrow');
+            arrows.forEach(arrow => {
+                arrow.style.color = '#ffffff';
+                arrow.style.setProperty('color', '#ffffff', 'important');
+            });
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar">

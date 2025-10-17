@@ -1,0 +1,25 @@
+/* Problem Page Font Color Override */
+/* This file forces white headers on blue backgrounds */
+
+.risk-scenario h2,
+.risk-scenario h3, 
+.risk-scenario h4,
+.scenario-card h2,
+.scenario-card h3,
+.scenario-card h4,
+.problem-description h2,
+.problem-description h3,
+.problem-description h4,
+.attack-step h2,
+.attack-step h3,
+.attack-step h4,
+.attack-flow h2,
+.attack-flow h3,
+.attack-flow h4 {
+    color: #ffffff !important;
+}
+
+/* Also force arrow color to white */
+.arrow {
+    color: #ffffff !important;
+}

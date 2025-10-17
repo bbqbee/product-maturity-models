@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test SSPM Font Colors</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>🧪 SSPM Font Color Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Instructions:</h2>
+        <ol>
+            <li><strong>Open your local SSPM problem page</strong>: Navigate to <code>c:\Users\bebischo\MDCSamplesBB\MDCSamplesBB\SSPM\problem.html</code></li>
+            <li><strong>Open it in your browser</strong>: Right-click → "Open with" → Choose your browser</li>
+            <li><strong>Check the headers</strong>: All headers on blue backgrounds should now be WHITE (not red)</li>
+            <li><strong>If still red</strong>: Press <kbd>Ctrl+F5</kbd> to force refresh and clear cache</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>Expected Changes:</h2>
+        <ul>
+            <li>✅ <strong>Main Risk Headers</strong> (Risk #1, Risk #2, etc.): WHITE text</li>
+            <li>✅ <strong>Problem Description Headers</strong> (🚨 The Problem): WHITE text</li>
+            <li>✅ <strong>Attack Flow Headers</strong> (Weak Auth, Public Sharing, etc.): WHITE text</li>
+            <li>✅ <strong>Arrow symbols</strong> (→): WHITE color</li>
+            <li>✅ <strong>Solution Headers</strong> (✅ The SSPM Solution): GREEN text (unchanged)</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Next Steps After Verification:</h2>
+        <p>If the local version looks good with WHITE headers:</p>
+        <ol>
+            <li>Run the <code>update_fonts.bat</code> file to commit and push changes</li>
+            <li>Wait 1-2 minutes for GitHub Pages to update</li>
+            <li>Check the live site: <a href="https://bbqbee.github.io/product-maturity-models/SSPM/problem.html">https://bbqbee.github.io/product-maturity-models/SSPM/problem.html</a></li>
+        </ol>
+    </div>
+</body>
+</html>

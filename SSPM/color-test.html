@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FONT COLOR TEST</title>
+    <style>
+        body { 
+            background: #0078d4; 
+            padding: 20px; 
+            font-family: Arial;
+        }
+        .test-header {
+            color: #d73502;
+            font-size: 2rem;
+        }
+        .scenario-card h2 {
+            color: #ffffff !important;
+            margin: 0 !important;
+            font-size: 1.8rem !important;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;">🧪 Font Color Test</h1>
+    
+    <div class="scenario-card">
+        <h2>This should be WHITE (scenario-card h2)</h2>
+    </div>
+    
+    <h2 class="test-header">This should be RED (test-header class)</h2>
+    
+    <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1);">
+        <h3 style="color: white;">✅ If the first header above is WHITE, the CSS is working!</h3>
+        <h3 style="color: white;">❌ If it's RED, there's a browser caching issue</h3>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scenarioHeaders = document.querySelectorAll('.scenario-card h2');
+            scenarioHeaders.forEach(header => {
+                header.style.setProperty('color', '#ffffff', 'important');
+                console.log('JavaScript override applied to:', header);
+            });
+        });
+    </script>
+</body>
+</html>
