@@ -335,17 +335,17 @@ section {
 }
 
 .scenario-card {
-    background: #2d3748;
+    background: #f7fafc;
     border-radius: 16px;
     padding: 3rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
-    border: 1px solid #4a5568;
+    border: 1px solid #e2e8f0;
 }
 
 .scenario-card.alert {
     border-left: 6px solid #d73502;
-    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
 }
 
 .scenario-header {
@@ -404,10 +404,10 @@ section {
     min-width: 180px;
     text-align: center;
     padding: 1.5rem 1rem;
-    background: linear-gradient(135deg, #fef7f7 0%, #fdecec 100%);
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
     border-radius: 12px;
-    border: 2px solid #ffebee;
-    box-shadow: 0 4px 12px rgba(215, 53, 2, 0.1);
+    border: 2px solid #718096;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .step-icon {
@@ -424,22 +424,22 @@ section {
 }
 
 .attack-step p {
-    color: #e2e8f0;
+    color: #f7fafc;
     font-size: 0.9rem;
     margin: 0;
 }
 
-/* Ensure all text in scenario cards is readable on dark background */
+/* Ensure all text in scenario cards is readable on light background */
 .scenario-card p,
 .problem-description p,
 .solution-preview p {
-    color: #e2e8f0;
+    color: #2d3748;
 }
 
 .scenario-card strong,
 .problem-description strong,
 .solution-preview strong {
-    color: #ffffff;
+    color: #1a202c;
 }
 
 .arrow {
